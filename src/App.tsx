@@ -4,7 +4,7 @@ import { routes } from './Routes'
 export function App() {
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename='/portfolio'>
       <Routes>
         {
           routes.map(({element,path},index) => <Route key={index.toString()} path={path} element={element} />)
