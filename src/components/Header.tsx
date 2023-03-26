@@ -1,4 +1,5 @@
 import {Link} from 'react-router-dom'
+import { headerItems } from '../constants/headerItems'
 
 
 export function Header(){
@@ -8,18 +9,13 @@ export function Header(){
                 <Link className='ml-20' to='/home'>Início</Link>
             </div>
             <ul className='flex flex-1 flex-row justify-evenly'>
-                <li>
-                    <Link to='/skills'>Habilidades</Link>
-                </li>
-                <li>
-                    <Link to='/projects'>Projetos</Link>
-                </li>
-                <li>
-                    <Link to='/about'>Sobre</Link>
-                </li>
-                <li>
-                    <Link to='/contact'>Contato</Link>
-                </li>
+                {
+                    headerItems.map(({name,path}) =>(
+                        <li>
+                            <Link to={path}>{name}</Link>
+                        </li>
+                    ))
+                }
             </ul>
         </header>
     )
