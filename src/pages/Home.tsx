@@ -15,7 +15,6 @@ export function Home(){
                         <p className="text-cgreen text-3xl text-center pt-4">Sempre tentando melhorar minhas habilidades</p>
                     </div>
                     <div className="w-[50%] h-[100%]">
-                        {/* <img src={Programmer} alt="programming"/> */}
                     </div>
                 </div>
     
