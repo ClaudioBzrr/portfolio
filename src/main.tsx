@@ -1,6 +1,9 @@
 import ReactDOM from 'react-dom/client'
-import {App} from './App'
-import './assets/styles/global.css'
+import {App} from './App.tsx'
+import { ChakraProvider } from '@chakra-ui/react'
 
-
-ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(<App/>)
+ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
+  <ChakraProvider resetCSS>
+    <App />
+  </ChakraProvider>
+)

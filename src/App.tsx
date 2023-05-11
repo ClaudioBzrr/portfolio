@@ -1,15 +1,15 @@
-import {BrowserRouter, Routes, Route} from 'react-router-dom'
-import { routes } from './Routes'
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { routes } from "./routes";
 
 export function App() {
-
   return (
-    <BrowserRouter basename='/portfolio'>
+    <BrowserRouter>
       <Routes>
         {
-          routes.map(({element,path},index) => <Route key={index.toString()} path={path} element={element} />)
+          routes.map(({path,element},index) => <Route key={index} path={path} element={element}/>)
         }
       </Routes>
     </BrowserRouter>
   )
 }
+
