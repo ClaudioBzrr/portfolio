@@ -1,8 +1,12 @@
 "use client"
-import { Heading } from "@chakra-ui/react";
+import { Flex, Heading, Stack } from "@chakra-ui/react";
 
 export default function Home() {
   return (
-    <Heading>Olá mundo</Heading>
+    <Flex minH={'100vh'} w={'100vw'} align={'center'} justify={'space-between'} >
+      <Stack mx={'auto'} my={8} maxW={'lg'}>
+          
+      </Stack>
+    </Flex>
   )
 }
