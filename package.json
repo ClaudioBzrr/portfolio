@@ -5,7 +5,7 @@
   "homepage": "https://claudiobzrr.github.io/",
   "type": "module",
   "scripts": {
-    "deploy":"gh-pages -d dist",
+    "deploy":"npm run build && gh-pages -d dist",
     "dev": "vite",
     "build": "tsc && vite build",
     "lint": "eslint src --ext ts,tsx",

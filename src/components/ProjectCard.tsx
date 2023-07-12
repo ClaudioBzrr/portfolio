@@ -5,6 +5,6 @@ interface IProject {
   repository: string;
 }
 
-export function ProjectCard({ name, description, url, repository }: IProject) {
+export function ProjectCard() {
   return <div></div>;
 }
