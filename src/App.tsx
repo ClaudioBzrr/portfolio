@@ -18,7 +18,7 @@ export function App() {
         </section>
         <section className="Experience mt-20">
           <div className="text-slate-300 text-2xl">
-            <p className="">
+            <p className="w-full">
               Estudo React, React Native e Node js desde{' '}
               <a
                 className="underline text-indigo-400"
