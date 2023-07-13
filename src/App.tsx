@@ -1,6 +1,6 @@
 export function App() {
   return (
-    <div className="bg-slate-900 w-screen h-screen flex flex-row items-center justify-center">
+    <div className="bg-gray-950 w-screen h-screen flex flex-row items-center justify-center">
       <div className="flex flex-col items-center justify-center mx-9">
         <section className="presentation">
           <div className="text-slate-300 text-5xl">
@@ -12,7 +12,7 @@ export function App() {
               </span>
             </h1>
           </div>
-          <p className="italic text-gray-950 text-3xl font-medium w-full text-left mt-4">
+          <p className="italic text-slate-600 text-3xl font-medium w-full text-left mt-4">
             Desenvolvedor Fullstack
           </p>
         </section>
@@ -41,6 +41,9 @@ export function App() {
               <li>Versionamento de código</li>
             </ul>
           </div>
+        </section>
+        <section className="tech-stack">
+          <div className="w-full  flex flex-row items-center justify-center"></div>
         </section>
       </div>
     </div>
