@@ -43,7 +43,9 @@ export function App() {
           </div>
         </section>
         <section className="tech-stack">
-          <div className="w-full  flex flex-row items-center justify-center"></div>
+          <div className="w-full ">
+            <div className="flex flex-row items-center justify-center"></div>
+          </div>
         </section>
       </div>
     </div>
