@@ -1,6 +1,11 @@
+import { FaReact, FaNodeJs } from 'react-icons/fa';
+import { SiExpress, SiPostgresql } from 'react-icons/si';
+import { TbBrandVscode } from 'react-icons/tb';
+import { Badge } from './components/Badge';
+
 export function App() {
   return (
-    <div className="bg-gray-950 w-screen h-screen flex flex-row items-center justify-center">
+    <div className="bg-gray-950 w-screen min-h-screen flex flex-row items-center justify-center">
       <div className="flex flex-col items-center justify-center mx-9">
         <section className="presentation">
           <div className="text-slate-300 text-5xl">
@@ -42,9 +47,15 @@ export function App() {
             </ul>
           </div>
         </section>
-        <section className="tech-stack">
-          <div className="w-full ">
-            <div className="flex flex-row items-center justify-center"></div>
+        <section className="tech-stack mt-10">
+          <div className="md:min-w-[32em] ">
+            <div className="flex flex-row items-center justify-between">
+              <Badge icon={<FaReact />} />
+              <Badge icon={<FaNodeJs />} />
+              <Badge icon={<SiExpress />} />
+              <Badge icon={<SiPostgresql />} />
+              <Badge icon={<TbBrandVscode />} />
+            </div>
           </div>
         </section>
       </div>
