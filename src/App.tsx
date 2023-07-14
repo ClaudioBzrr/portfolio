@@ -34,16 +34,16 @@ export function App() {
               </a>
             </p>
             <p>De lá pra cá aprendi coisas como :</p>
-            <ul className="w-full mt-10 text-md list-disc flex flex-col justify-center">
-              <li>Criar e Consumir Apis</li>
-              <li>Banco de dados (sql)</li>
-              <li>Tipar código (Typescript)</li>
-              <li>Gerenciar rotas</li>
-              <li>Gerenciar estado de variáveis</li>
-              <li>Componentização</li>
-              <li>Criar interfaces intuitivas</li>
-              <li>S.O.L.I.D. + Clean Architecture</li>
-              <li>Versionamento de código</li>
+            <ul className="w-full mt-10 text-md flex flex-col justify-center">
+              <li>✔ Criar e Consumir Apis</li>
+              <li>✔ Banco de dados (sql)</li>
+              <li>✔ Tipar código (Typescript)</li>
+              <li>✔ Gerenciar rotas</li>
+              <li>✔ Gerenciar estado de variáveis</li>
+              <li>✔ Componentização</li>
+              <li>✔ Criar interfaces intuitivas</li>
+              <li>✔ S.O.L.I.D. + Clean Architecture</li>
+              <li>✔ Versionamento de código</li>
             </ul>
           </div>
         </section>
@@ -58,6 +58,7 @@ export function App() {
             </div>
           </div>
         </section>
+        <section className="projects mt-10"></section>
       </div>
     </div>
   );
