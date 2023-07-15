@@ -10,6 +10,7 @@
     "build": "tsc && vite build",
     "lint": "eslint src --ext ts,tsx",
     "lint:fix": "eslint src --ext ts,tsx --fix",
+    "postinstall": "npm run lint",
     "preview": "vite preview"
   },
   "dependencies": {
