@@ -60,9 +60,7 @@ export function App() {
             </div>
           </section>
         </article>
-        <article>
-          
-        </article>
+        <article></article>
       </div>
     </div>
   );
