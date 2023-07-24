@@ -6,10 +6,10 @@ import { Badge } from './components/Badge';
 export function App() {
   return (
     <div className="bg-gray-950 max-w-screen min-h-screen flex flex-row items-center justify-center">
-      <div className="flex flex-col items-center justify-center mx-20">
-        <article>
+      <div className="flex flex-col items-center justify-center mx-10 pt-5">
+        <article className="max-h-screen">
           <section className="presentation">
-            <div className="text-slate-300 text-5xl">
+            <div className="text-slate-300 sm:text-5xl text-2xl">
               <h1 className="w-full text-left">Olá 👋,</h1>
               <h1 className="pt-2">
                 Me chamo{' '}
@@ -18,12 +18,12 @@ export function App() {
                 </span>
               </h1>
             </div>
-            <p className="italic text-slate-600 text-3xl font-medium w-full text-left mt-4">
+            <p className="italic text-slate-600 sm:text-3xl text-xl font-medium text-left sm:mt-4 mt-2">
               Desenvolvedor Fullstack
             </p>
           </section>
-          <section className="Experience mt-20">
-            <div className="text-slate-300 text-2xl">
+          <section className="Experience sm:mt-20 mt-10">
+            <div className="text-slate-300 md:text-2xl sm:text-xl">
               <p className="w-full">
                 Estudo React, React Native e Node js desde{' '}
                 <a
@@ -35,7 +35,7 @@ export function App() {
                 </a>
               </p>
               <p>De lá pra cá aprendi coisas como :</p>
-              <ul className="w-full mt-10 text-md flex flex-col justify-center">
+              <ul className="mt-10 text-md flex flex-col justify-center">
                 <li>✔ Criar e Consumir Apis</li>
                 <li>✔ Banco de dados (sql)</li>
                 <li>✔ Tipar código (Typescript)</li>
@@ -60,7 +60,7 @@ export function App() {
             </div>
           </section>
         </article>
-        <article></article>
+        <article className="h-screen"></article>
       </div>
     </div>
   );
