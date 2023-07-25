@@ -60,7 +60,15 @@ export function App() {
             </div>
           </section>
         </article>
-        <article className="h-screen"></article>
+        <article className="h-screen">
+          <section>
+            <div>
+              <p className="sm:text-5xl text-2xl text-slate-300">
+                🚀 Meus projetos
+              </p>
+            </div>
+          </section>
+        </article>
       </div>
     </div>
   );
