@@ -1,3 +1,6 @@
+import { BsGithub } from 'react-icons/bs';
+import { BiLink } from 'react-icons/bi';
+
 interface IProjectCard {
   name: string;
   description: string;
@@ -12,20 +15,34 @@ export function ProjectCard({
   url,
 }: IProjectCard) {
   return (
-    <div>
-      <div>
+    <div className="bg-slate-500 rounded-lg p-4 flex flex-col justify-evenly md:h-56 md:w-[36rem] h-48 w-72 m-2">
+      <div className="md:text-3xl text-xl font-semibold">
         <p>{name}</p>
       </div>
-      <div>
+      <div className="md:text-xl text-md">
         <p>{description}</p>
       </div>
       {url ? (
-        <div>
-          <a href={url}>Link</a>
+        <div className="flex flex-row items-center">
+          <span className="text-3xl">
+            <BiLink />
+          </span>
+          <a className="ml-4 text-lg font-medium" href={url} target="__blank">
+            Link
+          </a>
         </div>
       ) : null}
-      <div>
-        <a href={repository}>Repositório</a>
+      <div className="flex flex-row items-center">
+        <span className="text-3xl">
+          <BsGithub />
+        </span>
+        <a
+          className="ml-4 text-lg font-medium"
+          href={repository}
+          target="__blank"
+        >
+          Repositório
+        </a>
       </div>
     </div>
   );

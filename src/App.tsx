@@ -2,6 +2,7 @@ import { FaReact, FaNodeJs } from 'react-icons/fa';
 import { SiExpress, SiPostgresql } from 'react-icons/si';
 import { TbBrandVscode } from 'react-icons/tb';
 import { Badge } from './components/Badge';
+import { ProjectCard } from './components/ProjectCard';
 
 export function App() {
   return (
@@ -18,7 +19,7 @@ export function App() {
                 </span>
               </h1>
             </div>
-            <p className="italic text-slate-600 sm:text-3xl text-xl font-medium text-left sm:mt-4 mt-2">
+            <p className="italic text-slate-500 sm:text-3xl text-xl font-medium text-left sm:mt-4 mt-2">
               Desenvolvedor Fullstack
             </p>
           </section>
@@ -60,12 +61,25 @@ export function App() {
             </div>
           </section>
         </article>
-        <article className="h-screen">
-          <section>
+        <article className="min-h-screen">
+          <section className="mt-10">
             <div>
-              <p className="sm:text-5xl text-2xl text-slate-300">
+              <p className="text-center sm:text-5xl text-2xl text-slate-300">
                 🚀 Meus projetos
               </p>
+            </div>
+            <div className="min-h-full flex flex-col items-center justify-center mt-10">
+              <ProjectCard
+                name="eslint-config"
+                description="Minha configuração pessoal do Eslint, aplicado para react e node js"
+                url="https://www.npmjs.com/package/@claudiobzrr/eslint-config"
+                repository="https://github.com/ClaudioBzrr/eslint-config"
+              />
+              <ProjectCard
+                name="UserRegistration"
+                description="Um sistema que tem o objetivo de cadastrar e gerenciar usuários"
+                repository="https://github.com/ClaudioBzrr/UserRegistration"
+              />
             </div>
           </section>
         </article>
