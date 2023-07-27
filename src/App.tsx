@@ -8,7 +8,7 @@ export function App() {
   return (
     <div className="bg-gray-950 max-w-screen min-h-screen flex flex-row items-center justify-center">
       <div className="flex flex-col items-center justify-center mx-10 pt-5">
-        <article className="h-screen flex flex-col justify-evenly">
+        <article className="max-h-screen flex flex-col justify-evenly">
           <section className="presentation">
             <div className="text-slate-300 sm:text-5xl text-2xl">
               <h1 className="w-full text-left">Olá 👋,</h1>
