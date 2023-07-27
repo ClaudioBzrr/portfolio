@@ -68,7 +68,7 @@ export function App() {
                 🚀 Meus projetos
               </p>
             </div>
-            <div className="mt-10 flex min-h-full flex-col items-center justify-center">
+            <div className="mt-10 flex min-h-[70vh] flex-col items-center justify-evenly">
               <ProjectCard
                 name="eslint-config"
                 description="Minha configuração pessoal do Eslint, aplicado para react e node js"
