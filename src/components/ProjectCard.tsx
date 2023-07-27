@@ -15,11 +15,11 @@ export function ProjectCard({
   url,
 }: IProjectCard) {
   return (
-    <div className="bg-slate-500 rounded-lg p-4 flex flex-col justify-evenly md:h-56 md:w-[36rem] h-48 w-72 m-2">
-      <div className="md:text-3xl text-xl font-semibold">
+    <div className="m-2 flex h-48 w-72 flex-col justify-evenly rounded-lg bg-slate-500 p-4 md:h-56 md:w-[36rem]">
+      <div className="text-xl font-semibold md:text-3xl">
         <p>{name}</p>
       </div>
-      <div className="md:text-xl text-md">
+      <div className="text-md md:text-xl">
         <p>{description}</p>
       </div>
       {url ? (

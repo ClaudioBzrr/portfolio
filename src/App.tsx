@@ -6,29 +6,29 @@ import { ProjectCard } from './components/ProjectCard';
 
 export function App() {
   return (
-    <div className="bg-gray-950 max-w-screen min-h-screen flex flex-row items-center justify-center">
-      <div className="flex flex-col items-center justify-center mx-10 pt-5">
-        <article className="max-h-screen flex flex-col justify-evenly">
-          <section className="presentation">
-            <div className="text-slate-300 sm:text-5xl text-2xl">
+    <div className="flex min-h-screen max-w-full flex-row items-center justify-center bg-gray-950">
+      <div className="mx-10 flex flex-col items-center justify-center pt-5">
+        <article className="flex h-screen flex-col justify-evenly">
+          <section>
+            <div className="text-2xl text-slate-300 sm:text-5xl">
               <h1 className="w-full text-left">Olá 👋,</h1>
               <h1 className="pt-2">
                 Me chamo{' '}
-                <span className="text-sky-500 font-semibold">
+                <span className="font-semibold text-sky-500">
                   Claudio Bezerra
                 </span>
               </h1>
             </div>
-            <p className="italic text-slate-500 sm:text-3xl text-xl font-medium text-left sm:mt-4 mt-2">
+            <p className="mt-2 text-left text-xl font-medium italic text-slate-500 sm:mt-4 sm:text-3xl">
               Desenvolvedor Fullstack
             </p>
           </section>
-          <section className="Experience mt-10">
-            <div className="text-slate-300 md:text-2xl sm:text-xl">
+          <section className="mt-10">
+            <div className="text-slate-300 sm:text-xl md:text-2xl">
               <p className="w-full">
                 Estudo React, React Native e Node js desde{' '}
                 <a
-                  className="underline text-indigo-400"
+                  className="text-indigo-400 underline"
                   href="https://github.com/ClaudioBzrr/semanaomnistack11-be-the-hero"
                   target="__blank"
                 >
@@ -36,7 +36,7 @@ export function App() {
                 </a>
               </p>
               <p>De lá pra cá aprendi coisas como :</p>
-              <ul className="mt-10 text-md flex flex-col justify-center">
+              <ul className="mt-10 flex flex-col justify-center">
                 <li>✔ Criar e Consumir Apis</li>
                 <li>✔ Banco de dados (sql)</li>
                 <li>✔ Tipar código (Typescript)</li>
@@ -49,7 +49,7 @@ export function App() {
               </ul>
             </div>
           </section>
-          <section className="tech-stack mt-10">
+          <section className="mt-10">
             <div className="md:min-w-[32em] ">
               <div className="flex flex-row items-center justify-between">
                 <Badge icon={<FaReact />} />
@@ -64,11 +64,11 @@ export function App() {
         <article className="min-h-screen">
           <section className="mt-10">
             <div>
-              <p className="text-center sm:text-5xl text-2xl text-slate-300">
+              <p className="text-center text-2xl text-slate-300 sm:text-5xl">
                 🚀 Meus projetos
               </p>
             </div>
-            <div className="min-h-full flex flex-col items-center justify-center mt-10">
+            <div className="mt-10 flex min-h-full flex-col items-center justify-center">
               <ProjectCard
                 name="eslint-config"
                 description="Minha configuração pessoal do Eslint, aplicado para react e node js"
