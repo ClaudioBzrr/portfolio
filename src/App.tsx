@@ -3,6 +3,8 @@ import { SiExpress, SiPostgresql } from 'react-icons/si';
 import { TbBrandVscode } from 'react-icons/tb';
 import { Badge } from './components/Badge';
 import { ProjectCard } from './components/ProjectCard';
+import Lottie from 'lottie-react';
+import developer from './assets/animations/js-developer.json';
 
 export function App() {
   return (
@@ -82,6 +84,9 @@ export function App() {
               />
             </div>
           </section>
+        </article>
+        <article className="min-h-screen">
+          <Lottie animationData={developer} />
         </article>
       </div>
     </div>
