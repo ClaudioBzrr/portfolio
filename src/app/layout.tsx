@@ -1,4 +1,6 @@
+import { Stack } from '@chakra-ui/react';
 import { Providers } from './providers';
+import Header from '@/components/Header';
 
 export default function RootLayout({
   children,
@@ -8,7 +10,21 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" translate="no">
       <body>
-        <Providers>{children}</Providers>
+        <Providers>
+          <Stack maxW={'100vw'} minH={'100vh'}>
+            <Stack
+              backdropFilter={'blur(5px)'}
+              position={'fixed'}
+              w={'100%'}
+              h={'auto'}
+            >
+              <Header />
+            </Stack>
+            <Stack m={'auto'} w={'100%'} minH={'100%'}>
+              {children}
+            </Stack>
+          </Stack>
+        </Providers>
       </body>
     </html>
   );
