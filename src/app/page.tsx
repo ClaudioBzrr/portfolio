@@ -1,3 +1,4 @@
+import ProfileCard from '@/components/ProfileCard';
 import { Stack, Text } from '@chakra-ui/react';
 export default function Home() {
   return (
@@ -8,10 +9,25 @@ export default function Home() {
       h={'100%'}
       w={'100%'}
     >
-      <Stack p={16} boxShadow={'lg'}>
-        <Text>
-          Olá meu nome é Claudio Bezerra,e sou um desenvolvedor Fullstack
-        </Text>
+      <Stack
+        rounded={'lg'}
+        mx={'auto'}
+        p={{ sm: 20, base: 20 }}
+        boxShadow={'lg'}
+      >
+        <ProfileCard />
+        <Stack mt={12}>
+          <Text
+            size={{ sm: 'md', base: 'xs' }}
+            fontFamily={'heading'}
+          >{`Atuo como desenvolvedor Full Stack há ${
+            new Date().getFullYear() - 2020
+          } anos e sou formado em Análise e Desenvolvimento de sistemas`}</Text>
+          <Text>
+            Durante esse tempo, pude aprender fortes conceitos sobre
+            desenvolvimento engenharia de software
+          </Text>
+        </Stack>
       </Stack>
     </Stack>
   );
