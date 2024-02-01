@@ -23,10 +23,10 @@ export default function Home() {
             fontFamily={'heading'}
           >{`Atuo como desenvolvedor Full Stack há ${
             new Date().getFullYear() - 2020
-          } anos e sou formado em Análise e Desenvolvimento de sistemas`}</Text>
+          } anos e sou formado em Análise e Desenvolvimento de sistemas pela Fatene`}</Text>
           <Text>
             Durante esse tempo, pude aprender fortes conceitos sobre
-            desenvolvimento engenharia de software
+            desenvolvimento e engenharia de software
           </Text>
           <Stack mt={12}>
             <NetworkLinks />

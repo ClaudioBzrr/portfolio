@@ -1,7 +1,17 @@
+import TechTree from '@/components/TechTree';
+import { Heading, Stack } from '@chakra-ui/react';
+
 export default function Skills() {
   return (
-    <div>
-      <h1>Skills</h1>
-    </div>
+    <Stack
+      w={'100%'}
+      h={'100%'}
+      direction={'row'}
+      align={'center'}
+      justify={'center'}
+    >
+      <Heading>Tecnologias</Heading>
+      <TechTree />
+    </Stack>
   );
 }
