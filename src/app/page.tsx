@@ -1,3 +1,4 @@
+import NetworkLinks from '@/components/NetworkLinks';
 import ProfileCard from '@/components/ProfileCard';
 import { Stack, Text } from '@chakra-ui/react';
 export default function Home() {
@@ -27,6 +28,9 @@ export default function Home() {
             Durante esse tempo, pude aprender fortes conceitos sobre
             desenvolvimento engenharia de software
           </Text>
+          <Stack mt={12}>
+            <NetworkLinks />
+          </Stack>
         </Stack>
       </Stack>
     </Stack>
