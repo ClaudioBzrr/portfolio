@@ -1,4 +1,4 @@
-import TechTree from '@/components/TechTree';
+// import TechTree from '@/components/TechTree';
 import { Heading, Stack } from '@chakra-ui/react';
 
 export default function Skills() {
@@ -11,7 +11,7 @@ export default function Skills() {
       justify={'center'}
     >
       <Heading>Tecnologias</Heading>
-      <TechTree />
+      {/* <TechTree /> */}
     </Stack>
   );
 }

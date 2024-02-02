@@ -1,3 +1,5 @@
+'use client';
+
 import { Stack } from '@chakra-ui/react';
 import { Providers } from './providers';
 import Header from '@/components/Header';
