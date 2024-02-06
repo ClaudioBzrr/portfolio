@@ -7,10 +7,10 @@ export default function Template({ children }: { children: React.ReactNode }) {
   const MotionStack = motion(Stack);
   return (
     <MotionStack
-      initial={{ y: '100%' }}
+      initial={{ y: '50%' }}
       animate={{
         y: '0',
-        duration: 0.5,
+        duration: 2,
         ease: 'easeInOut',
         type: 'spring',
       }}

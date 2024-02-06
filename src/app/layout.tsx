@@ -15,6 +15,7 @@ export default function RootLayout({
         <Providers>
           <Stack maxW={'100vw'} minH={'100vh'}>
             <Stack
+              zIndex={'dropdown'}
               backdropFilter={'blur(5px)'}
               position={'fixed'}
               w={'100%'}
