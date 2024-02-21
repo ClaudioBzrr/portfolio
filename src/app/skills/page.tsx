@@ -10,7 +10,6 @@ export default function Skills() {
       align={'center'}
       justify={'center'}
     >
-      <Heading>Tecnologias</Heading>
       <Heading>🚧 Em construção...</Heading>
     </Stack>
   );
