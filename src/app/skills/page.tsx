@@ -11,7 +11,7 @@ export default function Skills() {
       justify={'center'}
     >
       <Heading>Tecnologias</Heading>
-      {/* <TechTree /> */}
+      <Heading>🚧 Em construção...</Heading>
     </Stack>
   );
 }

@@ -1,7 +1,16 @@
+import { Heading, Stack } from "@chakra-ui/react";
+
 export default function Projects() {
   return (
-    <div>
-      <h1>Projects</h1>
-    </div>
+    <Stack
+      w={'100%'}
+      h={'100%'}
+      direction={'row'}
+      align={'center'}
+      justify={'center'}
+  >
+      <Heading>Projects</Heading>
+      <Heading>🚧 Em construção...</Heading>
+    </Stack>
   );
 }
