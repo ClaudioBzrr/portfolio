@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "deploy":"npm run build && touch ./dist/.nojekyll && gh-pages -d dist",
+    "deploy":"npm run build && touch ./dist/.nojekyll && gh-pages -t -d dist",
     "build": "next build",
     "start": "next start",
     "lint": "eslint . --ext .ts,.tsx",
