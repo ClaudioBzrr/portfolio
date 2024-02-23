@@ -23,7 +23,7 @@ export default function RootLayout({
             >
               <Header />
             </Stack>
-            <Stack m={'auto'} w={'100%'} minH={'100%'}>
+            <Stack m={'auto'} minH={'100%'}>
               {children}
             </Stack>
           </Stack>
