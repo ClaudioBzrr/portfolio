@@ -12,8 +12,8 @@ export default function Home() {
     >
       <Stack
         rounded={'lg'}
-        mx={'auto'}
-        p={{ sm: 20, base: 20 }}
+        mx={{ sm: 'none', base: 8 }}
+        p={{ sm: 20, base: 8 }}
         boxShadow={'lg'}
       >
         <ProfileCard />
