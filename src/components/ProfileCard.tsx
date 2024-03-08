@@ -1,8 +1,20 @@
-import { Avatar, Heading, Stack, Text } from '@chakra-ui/react';
+'use client';
 
+import { Avatar, Heading, Stack, Text } from '@chakra-ui/react';
+import { motion } from 'framer-motion';
 export default function ProfileCard() {
+  const AnimatedStack = motion(Stack);
   return (
-    <Stack w={'100%'} direction={'row'} align={'center'}>
+    <AnimatedStack
+      whileHover={{
+        scale: 1.05,
+        transition: { duration: 1, ease: 'easeInOut' },
+      }}
+      p={4}
+      w={'100%'}
+      direction={'row'}
+      align={'center'}
+    >
       <Avatar
         size={{ sm: '2xl', base: 'xl' }}
         name="Claudio Bezerra"
@@ -14,6 +26,6 @@ export default function ProfileCard() {
           Fullstack Developer
         </Text>
       </Stack>
-    </Stack>
+    </AnimatedStack>
   );
 }
