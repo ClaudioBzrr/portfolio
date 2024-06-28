@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR" translate="no">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playwrite+NZ:wght@100..400&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @keyframes github {
+        0% {
+          -webkit-filter: blur(2px);
+        }
+        50% {
+          -webkit-filter: blur(5px);
+        }
+        0% {
+          -webkit-filter: blur(0px);
+        }
+      }
+      @keyframes blur {
+        0% {
+          -webkit-filter: blur(2px);
+        }
+        50% {
+          -webkit-filter: blur(10px);
+        }
+        100% {
+          -webkit-filter: blur(2px);
+        }
+      }
+      #shadow {
+        animation-name: blur;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+      }
+
+      #github:hover {
+        animation-name: github;
+        animation-duration: 0.5s;
+        animation-iteration-count: calc(1);
+      }
+    </style>
+    <title>Portfólio</title>
+  </head>
+  <body
+    class="font-['Mochiy_Pop_One'] m-0 p-0 bg-black w-[100vw] h-[100vh] flex flex-row items-center justify-center"
+  >
+    <section
+      id="main"
+      class="sm:w-[25vw] w-[90vw] sm:h-[80vh] h-[90vh] rounded-lg bg-black z-10"
+    >
+      <div
+        class="hover:scale-95 hover:cursor-pointer mt-4 flex flex-row items-center justify-center gap-4 transition-all"
+      >
+        <img
+          class="rounded-full sm:w-20 sm:h-20 w-16 h-16 border-green-500 border-2"
+          src="https://github.com/ClaudioBzrr.png"
+        />
+        <p class="text-slate-200 text-center sm:text-3xl text-xl">
+          Claudio Bezerra
+        </p>
+      </div>
+      <div
+        id="tech-stack"
+        class="text-green-500 text-5xl flex flex-row items-center justify-evenly mt-8"
+      >
+        <i
+          class="devicon-react-original hover:scale-125 hover:cursor-pointer transition-all"
+        ></i>
+        <i
+          class="devicon-nextjs-original-wordmark hover:scale-125 hover:cursor-pointer transition-all"
+        ></i>
+        <i
+          class="devicon-nodejs-plain-wordmark colored hover:scale-125 hover:cursor-pointer transition-all"
+        ></i>
+        <i
+          class="devicon-express-original hover:scale-125 hover:cursor-pointer transition-all"
+        ></i>
+        <i
+          class="devicon-postgresql-plain-wordmark hover:scale-125 hover:cursor-pointer transition-all"
+        ></i>
+      </div>
+      <div class="text-slate-300 px-8 mt-16 font-['Playwrite_NZ']">
+        <p id="aboutme" class="font-extralight"></p>
+      </div>
+      <div
+        id="social"
+        class="text-green-500 px-8 text-5xl mt-16 flex flex-row items-center justify-evenly"
+      >
+        <i
+          id="github"
+          class="devicon-github-original hover:scale-150 hover:cursor-pointer transition-all"
+        ></i>
+      </div>
+    </section>
+    <section
+      id="shadow"
+      class="absolute sm:w-[25vw] w-[90vw] sm:h-[80vh] h-[90vh] rounded-lg bg-green-500 blur-sm"
+    ></section>
+    <script>
+      const devTimer = new Date().getFullYear() - 2020;
+      document.querySelector(
+        "#aboutme"
+      ).innerHTML = `Olá, sou um desenvolvedor fullstack com mais de ${devTimer} anos de experiência, a cada dia desbravando o mundo da programação em busca de aperfeiçoamento contínuo.`;
+      document.querySelector("#github").addEventListener("click", () => {
+        window.open("https://github.com/ClaudioBzrr"), "_blank";
+      });
+    </script>
+  </body>
+</html>
