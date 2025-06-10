@@ -22,7 +22,7 @@
     />
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-      @keyframes github {
+      @keyframes nice-hover {
         0% {
           -webkit-filter: blur(2px);
         }
@@ -50,8 +50,8 @@
         animation-iteration-count: infinite;
       }
 
-      #github:hover {
-        animation-name: github;
+      #bealtiful-hover:hover {
+        animation-name: nice-hover;
         animation-duration: 0.5s;
         animation-iteration-count: calc(1);
       }
@@ -66,7 +66,9 @@
       class="sm:w-[25vw] w-[90vw] sm:h-[80vh] h-[90vh] rounded-lg bg-black z-10"
     >
       <div
-        class="hover:scale-95 hover:cursor-pointer mt-4 flex flex-row items-center justify-center gap-4 transition-all"
+        onclick="document.querySelector('#github').click()"
+        id="bealtiful-hover"
+        class="hover:cursor-pointer mt-4 flex flex-row items-center justify-center gap-4 transition-all"
       >
         <img
           class="rounded-full sm:w-20 sm:h-20 w-16 h-16 border-green-500 border-2"
@@ -81,27 +83,31 @@
         class="text-green-500 text-5xl flex flex-row items-center justify-evenly mt-8"
       >
         <i
+          id="bealtiful-hover"
           class="devicon-react-original hover:scale-125 hover:cursor-pointer transition-all"
         ></i>
         <i
+          id="bealtiful-hover"
           class="devicon-nodejs-plain-wordmark colored hover:scale-125 hover:cursor-pointer transition-all"
         ></i>
         <i
+          id="bealtiful-hover"
           class="devicon-express-original hover:scale-125 hover:cursor-pointer transition-all"
         ></i>
         <i
+          id="bealtiful-hover"
           class="devicon-postgresql-plain-wordmark hover:scale-125 hover:cursor-pointer transition-all"
         ></i>
       </div>
-      <div class="text-slate-300 px-8 mt-16 font-['Playwrite_NZ']">
-        <p id="aboutme" class="font-extralight"></p>
+      <div class="text-slate-300 px-8 mt-16 font-['Playwrite_NZ'] ">
+        <p id="aboutme" class="font-extralight leading-10"></p>
       </div>
       <div
         id="social"
         class="text-green-500 px-8 text-5xl mt-16 flex flex-row items-center justify-evenly"
       >
         <i
-          id="github"
+          id="bealtiful-hover"
           class="devicon-github-original hover:scale-150 hover:cursor-pointer transition-all"
         ></i>
       </div>
