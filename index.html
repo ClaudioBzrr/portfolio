@@ -117,11 +117,11 @@
       class="absolute sm:w-[25vw] w-[90vw] sm:h-[80vh] h-[90vh] rounded-lg bg-green-500 blur-sm"
     ></section>
     <script>
-      const devTimer = new Date().getFullYear() - 2020;
+      const devTime = new Date().getFullYear() - 2020;
       document.querySelector(
         "#aboutme"
-      ).innerHTML = `Olá, sou um desenvolvedor fullstack com mais de ${devTimer} anos de experiência, a cada dia desbravando o mundo da programação em busca de aperfeiçoamento contínuo.`;
-      document.querySelector("#github").addEventListener("click", () => {
+      ).innerHTML = `Olá, sou um desenvolvedor fullstack com mais de ${devTime} anos de experiência, a cada dia desbravando o mundo da programação em busca de aperfeiçoamento contínuo.`;
+      document.querySelector(".devicon-github-original").addEventListener("click", () => {
         window.open("https://github.com/ClaudioBzrr"), "_blank";
       });
     </script>
