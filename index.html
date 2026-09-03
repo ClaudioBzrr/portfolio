@@ -1,126 +1,707 @@
 <!DOCTYPE html>
-<html lang="pt-BR" translate="no">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Claudio Bezerra — Desenvolvedor Fullstack React, Node.js, TypeScript e PostgreSQL. Transformo ideias em produtos rápidos, seguros e escaláveis." />
+  <title>Claudio Bezerra — Desenvolvedor Fullstack</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+  <style>
+    :root {
+      --bg: #070b16;
+      --bg-2: #0b1224;
+      --card: #0f1830;
+      --card-2: #13203d;
+      --border: rgba(148, 163, 184, 0.16);
+      --text: #e8eefc;
+      --muted: #9aa8c7;
+      --accent: #10b981;
+      --accent-2: #34d399;
+      --accent-soft: rgba(16, 185, 129, 0.12);
+      --violet: #818cf8;
+      --radius: 18px;
+      --shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+      --max: 1120px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    img, svg { max-width: 100%; height: auto; }
+    h1, h2, h3, h4, p { overflow-wrap: break-word; }
+    section.block, .hero, .wrap, .hero-grid > *, .stack, .card, .panel, .contact { min-width: 0; }
+    section.block[id], div[id] { scroll-margin-top: 84px; }
+    body {
+      margin: 0;
+      font-family: "Inter", system-ui, -apple-system, sans-serif;
+      background:
+        radial-gradient(900px 480px at 85% -5%, rgba(16,185,129,.14), transparent 60%),
+        radial-gradient(800px 500px at -10% 20%, rgba(129,140,248,.13), transparent 60%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    a { color: inherit; }
+    .wrap {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding-left: max(20px, env(safe-area-inset-left));
+      padding-right: max(20px, env(safe-area-inset-right));
+      width: 100%;
+    }
 
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
-    />
+    /* Header */
+    header {
+      position: sticky; top: 0; z-index: 50;
+      backdrop-filter: blur(14px);
+      background: rgba(7, 11, 22, 0.78);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 68px; padding-top: 8px; padding-bottom: 8px; }
+    .brand { display: flex; align-items: center; gap: 12px; font-family: "Sora", sans-serif; font-weight: 800; letter-spacing: .2px; text-decoration: none; min-width: 0; flex-shrink: 1; }
+    .brand > span:last-child { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .brand-mark {
+      width: 38px; height: 38px; border-radius: 12px;
+      display: grid; place-items: center; font-size: 15px; font-weight: 800; color: #04120c;
+      background: linear-gradient(135deg, var(--accent-2), var(--accent));
+      box-shadow: 0 8px 24px rgba(16,185,129,.35);
+    }
+    .brand small { display: block; font-family: "Inter", sans-serif; font-weight: 500; font-size: 11px; color: var(--muted); letter-spacing: .12em; text-transform: uppercase; }
+    .links { display: flex; gap: 26px; align-items: center; }
+    .links a { text-decoration: none; color: var(--muted); font-weight: 500; font-size: 14.5px; transition: color .2s; }
+    .links a:hover { color: #fff; }
+    .nav-cta { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+    .lang-switch {
+      display: flex; background: rgba(148,163,184,.1); border: 1px solid var(--border);
+      border-radius: 999px; padding: 3px; gap: 2px; flex-shrink: 0;
+    }
+    .lang-switch button {
+      border: 0; cursor: pointer; font: 700 12px "Inter", sans-serif; letter-spacing: .04em;
+      padding: 8px 13px; border-radius: 999px; background: transparent; color: var(--muted);
+      transition: all .2s; min-height: 36px;
+    }
+    .lang-switch button.active { background: var(--accent); color: #04120c; box-shadow: 0 4px 14px rgba(16,185,129,.4); }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 9px; text-decoration: none;
+      font-weight: 700; font-size: 14.5px; padding: 12px 20px; border-radius: 12px;
+      border: 1px solid transparent; cursor: pointer; transition: transform .18s, box-shadow .18s, background .18s;
+      white-space: normal; text-align: center; line-height: 1.35; min-height: 46px;
+    }
+    .btn-primary { background: linear-gradient(135deg, var(--accent-2), var(--accent)); color: #04120c; box-shadow: 0 10px 28px rgba(16,185,129,.32); }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 16px 36px rgba(16,185,129,.42); }
+    .btn-ghost { background: rgba(148,163,184,.08); border-color: var(--border); color: var(--text); }
+    .btn-ghost:hover { background: rgba(148,163,184,.15); transform: translateY(-2px); }
+    .btn-sm { padding: 9px 15px; font-size: 13.5px; border-radius: 10px; }
+    .hamburger { display: none; background: rgba(148,163,184,.08); border: 1px solid var(--border); border-radius: 10px; color: var(--text); font-size: 20px; line-height: 1; padding: 9px 12px; min-width: 44px; min-height: 44px; cursor: pointer; flex-shrink: 0; transition: background .2s, border-color .2s, transform .15s; }
+    .hamburger:hover { background: rgba(148,163,184,.16); }
+    .hamburger:active { transform: scale(.94); }
+    .mobile-menu { display: none; }
+    .mobile-nav { display: grid; gap: 6px; padding: 12px 20px 8px; }
+    .mobile-nav a {
+      display: flex; align-items: center; gap: 12px; min-height: 52px; padding: 12px 14px;
+      text-decoration: none; color: var(--text); font-weight: 600; font-size: 15px;
+      background: rgba(148,163,184,.06); border: 1px solid var(--border); border-radius: 12px;
+      transition: background .18s, border-color .18s, transform .18s;
+    }
+    .mobile-nav a::before {
+      content: ""; width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0;
+      background: rgba(148,163,184,.35); transition: background .18s, box-shadow .18s;
+    }
+    .mobile-nav a::after { content: "→"; margin-left: auto; color: var(--muted); font-weight: 400; transition: transform .18s, color .18s; }
+    .mobile-nav a:hover { background: rgba(148,163,184,.12); }
+    .mobile-nav a:hover::after { transform: translateX(3px); color: var(--accent-2); }
+    .mobile-nav a.active { border-color: rgba(16,185,129,.5); background: var(--accent-soft); }
+    .mobile-nav a.active::before { background: var(--accent); box-shadow: 0 0 10px rgba(16,185,129,.8); }
+    .mobile-cta { display: grid; gap: 8px; padding: 8px 20px calc(18px + env(safe-area-inset-bottom)); }
+    .mobile-cta .btn { width: 100%; }
+    .mobile-menu.open { display: block; animation: menuDown .28s ease both; }
+    .mobile-menu.open .mobile-nav a { animation: menuItem .32s ease both; }
+    .mobile-menu.open .mobile-nav a:nth-child(1) { animation-delay: .03s; }
+    .mobile-menu.open .mobile-nav a:nth-child(2) { animation-delay: .07s; }
+    .mobile-menu.open .mobile-nav a:nth-child(3) { animation-delay: .11s; }
+    .mobile-menu.open .mobile-nav a:nth-child(4) { animation-delay: .15s; }
+    .mobile-menu.open .mobile-nav a:nth-child(5) { animation-delay: .19s; }
+    @keyframes menuDown { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: none; } }
+    @keyframes menuItem { from { opacity: 0; transform: translateX(-10px); } to { opacity: 1; transform: none; } }
+    .links a { position: relative; }
+    .links a.active { color: #fff; }
+    .links a.active::after {
+      content: ""; position: absolute; left: 0; right: 0; bottom: -8px; height: 2px; border-radius: 2px;
+      background: linear-gradient(90deg, var(--accent-2), var(--accent));
+    }
 
-    <link
-      href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Playwrite+NZ:wght@100..400&display=swap"
-      rel="stylesheet"
-    />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-      @keyframes github {
-        0% {
-          -webkit-filter: blur(2px);
-        }
-        50% {
-          -webkit-filter: blur(5px);
-        }
-        0% {
-          -webkit-filter: blur(0px);
-        }
-      }
-      @keyframes blur {
-        0% {
-          -webkit-filter: blur(2px);
-        }
-        50% {
-          -webkit-filter: blur(10px);
-        }
-        100% {
-          -webkit-filter: blur(2px);
-        }
-      }
-      #shadow {
-        animation-name: blur;
-        animation-duration: 3s;
-        animation-iteration-count: infinite;
-      }
+    /* Hero */
+    .hero { padding: clamp(40px, 6vw, 72px) 0 30px; position: relative; }
+    .hero-grid { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.85fr); gap: clamp(24px, 4vw, 48px); align-items: center; }
+    .pill {
+      display: inline-flex; align-items: center; gap: 9px;
+      font-size: 13px; font-weight: 600; color: var(--accent-2);
+      background: var(--accent-soft); border: 1px solid rgba(16,185,129,.28);
+      padding: 8px 14px; border-radius: 999px;
+    }
+    .pulse { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 0 rgba(16,185,129,.6); animation: pulse 2s infinite; }
+    @keyframes pulse { 70% { box-shadow: 0 0 0 9px rgba(16,185,129,0); } 100% { box-shadow: 0 0 0 0 rgba(16,185,129,0); } }
+    h1 { font-family: "Sora", sans-serif; font-size: clamp(30px, 4.5vw + 1rem, 58px); line-height: 1.08; margin: 20px 0 16px; letter-spacing: -0.02em; text-wrap: balance; }
+    h1 .grad { background: linear-gradient(92deg, var(--accent-2) 10%, #6ee7b7 40%, var(--violet) 90%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .lede { color: var(--muted); font-size: clamp(15px, 1.6vw, 17.5px); max-width: 56ch; margin: 0 0 28px; }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 30px; }
+    .stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; max-width: 520px; }
+    .stat { background: rgba(148,163,184,.07); border: 1px solid var(--border); border-radius: 14px; padding: 14px 14px; min-width: 0; }
+    .stat strong { display: block; font-family: "Sora", sans-serif; font-size: clamp(18px, 2.4vw, 22px); }
+    .stat span { font-size: 12.5px; color: var(--muted); display: block; line-height: 1.4; }
 
-      #github:hover {
-        animation-name: github;
-        animation-duration: 0.5s;
-        animation-iteration-count: calc(1);
-      }
-    </style>
-    <title>Portfólio</title>
-  </head>
-  <body
-    class="font-['Mochiy_Pop_One'] m-0 p-0 bg-black w-[100vw] h-[100vh] flex flex-row items-center justify-center"
-  >
-    <section
-      id="main"
-      class="sm:w-[25vw] w-[90vw] sm:h-[80vh] h-[90vh] rounded-lg bg-black z-10"
-    >
-      <div
-        class="hover:scale-95 hover:cursor-pointer mt-4 flex flex-row items-center justify-center gap-4 transition-all"
-      >
-        <img
-          class="rounded-full sm:w-20 sm:h-20 w-16 h-16 border-green-500 border-2"
-          src="https://github.com/ClaudioBzrr.png"
-        />
-        <p class="text-slate-200 text-center sm:text-3xl text-xl">
-          Claudio Bezerra
-        </p>
+    .profile-card {
+      background: linear-gradient(180deg, var(--card-2), var(--card));
+      border: 1px solid var(--border); border-radius: 22px; padding: clamp(20px, 3vw, 28px);
+      box-shadow: var(--shadow); position: relative; overflow: hidden; width: 100%;
+    }
+    .profile-card::before { content: ""; position: absolute; inset: 0 0 auto 0; height: 120px; background: radial-gradient(400px 120px at 50% 0%, rgba(16,185,129,.22), transparent 70%); }
+    .profile-top { display: flex; gap: 16px; align-items: center; position: relative; min-width: 0; }
+    .avatar { width: 84px; height: 84px; border-radius: 50%; border: 3px solid var(--accent); object-fit: cover; background: #000; flex-shrink: 0; }
+    .profile-top h2 { margin: 0; font-family: "Sora", sans-serif; font-size: clamp(17px, 2.4vw, 20px); }
+    .profile-top p { margin: 4px 0 0; color: var(--muted); font-size: 13.5px; }
+    .profile-tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0; position: relative; }
+    .tag { font-size: 12px; font-weight: 600; padding: 6px 11px; border-radius: 999px; background: rgba(16,185,129,.1); border: 1px solid rgba(16,185,129,.25); color: #a7f3d0; }
+    .tag.dim { background: rgba(148,163,184,.1); border-color: var(--border); color: var(--muted); }
+    .profile-row { display: flex; gap: 10px; position: relative; }
+    .profile-row .btn { flex: 1 1 0; justify-content: center; min-width: 0; }
+
+    /* Sections */
+    section.block { padding: clamp(36px, 6vw, 56px) 0; }
+    .kicker { color: var(--accent-2); font-weight: 700; font-size: 13px; letter-spacing: .16em; text-transform: uppercase; margin: 0 0 10px; }
+    h2.title { font-family: "Sora", sans-serif; font-size: clamp(22px, 2.6vw + 1rem, 34px); margin: 0 0 12px; letter-spacing: -0.01em; line-height: 1.2; text-wrap: balance; }
+    .sub { color: var(--muted); max-width: 68ch; margin: 0 0 26px; font-size: clamp(14px, 1.6vw, 16px); }
+
+    .stack-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+    .stack {
+      background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 20px; transition: transform .2s, border-color .2s;
+    }
+    .stack:hover { transform: translateY(-4px); border-color: rgba(16,185,129,.45); }
+    .stack i { font-size: 38px; }
+    .stack h3 { margin: 12px 0 6px; font-size: 16px; }
+    .stack p { margin: 0; color: var(--muted); font-size: 13.5px; }
+
+    .projects { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+    .card {
+      background: linear-gradient(180deg, rgba(255,255,255,.03), transparent), var(--card);
+      border: 1px solid var(--border); border-radius: var(--radius); padding: 22px;
+      display: flex; flex-direction: column; gap: 12px;
+      transition: transform .22s, border-color .22s, box-shadow .22s;
+    }
+    .card:hover { transform: translateY(-5px); border-color: rgba(16,185,129,.5); box-shadow: 0 18px 44px rgba(0,0,0,.4); }
+    .card-icon { width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center; font-size: 22px; background: var(--accent-soft); border: 1px solid rgba(16,185,129,.3); }
+    .card h3 { margin: 0; font-size: 17.5px; font-family: "Sora", sans-serif; }
+    .card p { margin: 0; color: var(--muted); font-size: 14px; flex: 1; }
+    .card-tags { display: flex; flex-wrap: wrap; gap: 7px; }
+    .mini { font-size: 11.5px; font-weight: 700; padding: 5px 10px; border-radius: 999px; background: rgba(148,163,184,.1); border: 1px solid var(--border); color: #cbd5e1; }
+    .card-foot { display: flex; gap: 10px; margin-top: 4px; flex-wrap: wrap; }
+    .card-foot a { flex: 1 1 140px; text-align: center; }
+
+    .about-grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr); gap: 16px; }
+    .panel { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: clamp(20px, 3vw, 26px); min-width: 0; }
+    .panel h3 { margin: 0 0 12px; font-family: "Sora", sans-serif; }
+    .panel p, .panel li { color: var(--muted); font-size: 14.5px; }
+    .check { list-style: none; padding: 0; margin: 16px 0 0; display: grid; gap: 10px; }
+    .check li { display: flex; gap: 10px; align-items: flex-start; }
+    .check b { color: var(--text); }
+    .tick { flex: none; width: 22px; height: 22px; border-radius: 50%; display: grid; place-items: center; background: var(--accent-soft); border: 1px solid rgba(16,185,129,.35); color: var(--accent-2); font-size: 13px; font-weight: 800; }
+
+    .timeline { display: grid; gap: 12px; margin-top: 6px; }
+    .t-item { display: grid; grid-template-columns: 86px minmax(0, 1fr); gap: 14px; padding: 14px; border: 1px solid var(--border); border-radius: 14px; background: rgba(148,163,184,.05); }
+    .t-item strong { font-size: 13px; color: var(--accent-2); white-space: nowrap; }
+    .t-item h4 { margin: 0 0 4px; font-size: 14.5px; }
+    .t-item p { margin: 0; font-size: 13.5px; color: var(--muted); }
+
+    .contact {
+      background: linear-gradient(135deg, rgba(16,185,129,.14), rgba(129,140,248,.12)), var(--card);
+      border: 1px solid rgba(16,185,129,.3); border-radius: 24px; padding: clamp(22px, 4vw, 46px);
+      display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr); gap: clamp(18px, 3vw, 28px); align-items: center;
+      box-shadow: var(--shadow); overflow: hidden;
+    }
+    .contact h2 { font-family: "Sora", sans-serif; margin: 0 0 10px; font-size: clamp(22px, 2.6vw + 1rem, 34px); line-height: 1.2; text-wrap: balance; }
+    .contact p { color: var(--muted); margin: 0 0 22px; }
+    .contact-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    .contact-side { display: grid; gap: 10px; min-width: 0; align-content: start; }
+    .contact-line { display: flex; align-items: center; gap: 12px; background: rgba(7,11,22,.5); border: 1px solid var(--border); border-radius: 12px; padding: 12px 14px; font-size: 14px; text-decoration: none; min-width: 0; overflow: hidden; min-height: 56px; transition: border-color .2s, background .2s, transform .18s; }
+    .contact-ico {
+      width: 44px; height: 44px; border-radius: 12px; flex-shrink: 0;
+      display: grid; place-items: center; font-size: 22px; line-height: 1;
+      background: var(--accent-soft); border: 1px solid rgba(16,185,129,.3);
+      align-self: center;
+    }
+    .contact-line > div { min-width: 0; flex: 1; }
+    .contact-line > div b { display: block; font-size: 14px; }
+    .contact-line > div b, .contact-line > div span { overflow: hidden; text-overflow: ellipsis; overflow-wrap: anywhere; }
+    .contact-line:hover { border-color: rgba(16,185,129,.5); }
+    .contact-line > div span { color: var(--muted); font-size: 12.5px; display: block; }
+
+    footer { border-top: 1px solid var(--border); padding: 26px 0 34px; color: var(--muted); font-size: 13.5px; }
+    .foot { display: flex; justify-content: space-between; gap: 14px; flex-wrap: wrap; align-items: center; }
+
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    @media (max-width: 1100px) {
+      .hero-grid { gap: 28px; }
+      .stack-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .projects { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 960px) {
+      .hero-grid, .about-grid, .contact { grid-template-columns: minmax(0, 1fr); }
+      .links, .nav-cta .btn { display: none; }
+      .hamburger { display: inline-flex; align-items: center; justify-content: center; }
+      .stats { max-width: none; }
+      /* Tablet/phone: contact rows always stay single-column, icon left + text right on one row */
+      .contact { align-items: start; }
+      .contact-side { grid-template-columns: minmax(0, 1fr); }
+      .contact-line { flex-direction: row; align-items: center; flex-wrap: nowrap; }
+    }
+    @media (max-width: 720px) {
+      .stack-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .projects { grid-template-columns: minmax(0, 1fr); }
+      .hero-actions .btn { flex: 1 1 160px; }
+      .contact-actions .btn { flex: 1 1 200px; }
+      .foot { flex-direction: column; align-items: flex-start; }
+      /* Phone: contact rows stack full-width again, icon back inline */
+      .contact-side { grid-template-columns: minmax(0, 1fr); }
+      .contact-line { flex-direction: row; align-items: center; gap: 12px; padding: 14px; min-height: 64px; }
+      .contact-line:active { transform: scale(.99); }
+    }
+    @media (max-width: 480px) {
+      .wrap { padding-left: max(16px, env(safe-area-inset-left)); padding-right: max(16px, env(safe-area-inset-right)); }
+      .brand { gap: 9px; font-size: 14.5px; }
+      .brand small { display: none; }
+      .brand-mark { width: 34px; height: 34px; font-size: 13px; border-radius: 10px; }
+      .lang-switch button { padding: 7px 10px; min-height: 34px; font-size: 11px; }
+      .hamburger { min-width: 42px; min-height: 42px; }
+      .mobile-nav { padding: 12px 16px 6px; }
+      .mobile-cta { padding: 6px 16px calc(16px + env(safe-area-inset-bottom)); }
+      .pill { font-size: 12px; max-width: 100%; }
+      .hero-actions { flex-direction: column; align-items: stretch; }
+      .hero-actions .btn { flex: none; width: 100%; }
+      .stats { grid-template-columns: minmax(0, 1fr); gap: 10px; }
+      .stack-grid { grid-template-columns: minmax(0, 1fr); }
+      .stack { display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 4px 14px; align-items: start; }
+      .stack i { font-size: 34px; grid-row: span 2; }
+      .stack h3 { margin: 2px 0 4px; }
+      .stack p { grid-column: 2; }
+      .profile-top { gap: 12px; }
+      .avatar { width: 64px; height: 64px; }
+      .profile-row { flex-direction: column; }
+      .profile-row .btn { width: 100%; }
+      .t-item { grid-template-columns: minmax(0, 1fr); gap: 6px; }
+      .t-item strong { white-space: normal; }
+      .contact { border-radius: 18px; }
+      /* Compact side-by-side buttons instead of giant full-width stacked blocks */
+      .contact-actions { flex-direction: row; align-items: stretch; gap: 10px; }
+      .contact-actions .btn { flex: 1 1 0; width: auto; min-height: 42px; padding: 10px 12px; font-size: 13px; border-radius: 10px; }
+    }
+    @media (max-width: 380px) {
+      /* Very small phones: keep only logo mark so lang-switch + burger never overflow */
+      .brand > span:last-child { display: none; }
+      .nav { gap: 8px; }
+      .nav-cta { gap: 8px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+      .reveal { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#top">
+        <span class="brand-mark">CB</span>
+        <span>Claudio Bezerra<small data-i18n="brand_sub">Fullstack Developer</small></span>
+      </a>
+      <nav class="links" aria-label="Primary">
+        <a href="#sobre" data-i18n="nav_about">Sobre</a>
+        <a href="#stack" data-i18n="nav_stack">Tecnologias</a>
+        <a href="#projetos" data-i18n="nav_projects">Projetos</a>
+        <a href="#trajetoria" data-i18n="nav_path">Trajetória</a>
+        <a href="#contato" data-i18n="nav_contact">Contato</a>
+      </nav>
+      <div class="nav-cta">
+        <div class="lang-switch" role="group" aria-label="Language">
+          <button id="btn-pt" class="active" type="button">PT-BR</button>
+          <button id="btn-en" type="button">EN-US</button>
+        </div>
+        <a class="btn btn-primary btn-sm" href="https://github.com/ClaudioBzrr" target="_blank" rel="noopener">GitHub ↗</a>
+        <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="mobileMenu">☰</button>
       </div>
-      <div
-        id="tech-stack"
-        class="text-green-500 text-5xl flex flex-row items-center justify-evenly mt-8"
-      >
-        <i
-          class="devicon-react-original hover:scale-125 hover:cursor-pointer transition-all"
-        ></i>
-        <i
-          class="devicon-nextjs-original-wordmark hover:scale-125 hover:cursor-pointer transition-all"
-        ></i>
-        <i
-          class="devicon-nodejs-plain-wordmark colored hover:scale-125 hover:cursor-pointer transition-all"
-        ></i>
-        <i
-          class="devicon-express-original hover:scale-125 hover:cursor-pointer transition-all"
-        ></i>
-        <i
-          class="devicon-postgresql-plain-wordmark hover:scale-125 hover:cursor-pointer transition-all"
-        ></i>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <nav class="mobile-nav" aria-label="Mobile">
+        <a href="#sobre" data-i18n="nav_about">Sobre</a>
+        <a href="#stack" data-i18n="nav_stack">Tecnologias</a>
+        <a href="#projetos" data-i18n="nav_projects">Projetos</a>
+        <a href="#trajetoria" data-i18n="nav_path">Trajetória</a>
+        <a href="#contato" data-i18n="nav_contact">Contato</a>
+      </nav>
+      <div class="mobile-cta">
+        <a class="btn btn-primary btn-sm" href="https://github.com/ClaudioBzrr" target="_blank" rel="noopener">GitHub ↗</a>
       </div>
-      <div class="text-slate-300 px-8 mt-16 font-['Playwrite_NZ']">
-        <p id="aboutme" class="font-extralight"></p>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <div class="wrap hero">
+      <div class="hero-grid">
+        <div class="reveal visible">
+          <span class="pill"><span class="pulse"></span><span data-i18n="hero_badge">Disponível para novos projetos</span></span>
+          <h1><span data-i18n="hero_title_1">Eu transformo ideias em</span> <span class="grad" data-i18n="hero_title_2">software rápido e confiável.</span></h1>
+          <p class="lede" data-i18n="hero_lede">Olá, sou o Claudio Bezerra — desenvolvedor fullstack com mais de 6 anos de experiência em React, Node.js, TypeScript, Express e PostgreSQL. Crio aplicações, automações e ferramentas que economizam tempo, reduzem erros e geram resultado de verdade.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#projetos" data-i18n="hero_cta_projects">Ver projetos ↓</a>
+            <a class="btn btn-ghost" href="https://github.com/ClaudioBzrr" target="_blank" rel="noopener" data-i18n="hero_cta_github">GitHub ↗</a>
+            <a class="btn btn-ghost" href="#contato" data-i18n="hero_cta_contact">Falar comigo</a>
+          </div>
+          <div class="stats">
+            <div class="stat"><strong>6+</strong><span data-i18n="stat_years">anos programando</span></div>
+            <div class="stat"><strong>20+</strong><span data-i18n="stat_repos">repositórios públicos</span></div>
+            <div class="stat"><strong>Full</strong><span data-i18n="stat_stack">stack: front + back</span></div>
+          </div>
+        </div>
+        <aside class="profile-card reveal visible">
+          <div class="profile-top">
+            <img class="avatar" src="https://github.com/ClaudioBzrr.png" alt="Claudio Bezerra" />
+            <div>
+              <h2>Claudio Bezerra</h2>
+              <p data-i18n="profile_role">Fullstack · React · Node · TypeScript</p>
+            </div>
+          </div>
+          <div class="profile-tags">
+            <span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">Node.js</span>
+            <span class="tag dim">Express</span><span class="tag dim">PostgreSQL</span><span class="tag dim">REST APIs</span>
+          </div>
+          <p style="color:var(--muted);font-size:14px;margin:0 0 18px" data-i18n="profile_text">Foco em código limpo, performance e experiência do usuário. Do MVP ao sistema em produção: eu projeto, construo e cuido da evolução.</p>
+          <div class="profile-row">
+            <a class="btn btn-primary btn-sm" href="#contato" data-i18n="profile_hire">Contratar</a>
+            <a class="btn btn-ghost btn-sm" href="https://github.com/ClaudioBzrr?tab=repositories" target="_blank" rel="noopener" data-i18n="profile_code">Ver código</a>
+          </div>
+        </aside>
       </div>
-      <div
-        id="social"
-        class="text-green-500 px-8 text-5xl mt-16 flex flex-row items-center justify-evenly"
-      >
-        <i
-          id="github"
-          class="devicon-github-original hover:scale-150 hover:cursor-pointer transition-all"
-        ></i>
+    </div>
+
+    <!-- STACK -->
+    <section class="block wrap" id="stack">
+      <p class="kicker reveal">Stack</p>
+      <h2 class="title reveal" data-i18n="stack_title">Tecnologias que domino de ponta a ponta</h2>
+      <p class="sub reveal" data-i18n="stack_sub">Do pixel da interface à query do banco: um ecossistema moderno, tipado e pronto para escalar.</p>
+      <div class="stack-grid">
+        <div class="stack reveal"><i class="devicon-react-original colored"></i><h3>React</h3><p data-i18n="stack_react">Interfaces rápidas, componentizadas e acessíveis — do landing page ao dashboard complexo.</p></div>
+        <div class="stack reveal"><i class="devicon-typescript-plain colored"></i><h3>TypeScript</h3><p data-i18n="stack_ts">Código previsível e seguro, com menos bugs em produção e refactors sem medo.</p></div>
+        <div class="stack reveal"><i class="devicon-nodejs-plain-wordmark colored"></i><h3>Node.js</h3><p data-i18n="stack_node">APIs e automações performáticas, CLIs e workers que resolvem trabalho chato sozinhos.</p></div>
+        <div class="stack reveal"><i class="devicon-express-original"></i><h3>Express</h3><p data-i18n="stack_express">Backends enxutos e bem estruturados, com autenticação, validação e boas práticas REST.</p></div>
+        <div class="stack reveal"><i class="devicon-postgresql-plain-wordmark colored"></i><h3>PostgreSQL</h3><p data-i18n="stack_pg">Modelagem sólida, consultas otimizadas e dados íntegros para crescer sem sustos.</p></div>
+        <div class="stack reveal"><i class="devicon-javascript-plain colored"></i><h3>JavaScript</h3><p data-i18n="stack_js">Base fluente no ecossistema web: do DOM ao async, do browser ao servidor.</p></div>
+        <div class="stack reveal"><i class="devicon-git-plain colored"></i><h3>Git &amp; GitHub</h3><p data-i18n="stack_git">Versionamento disciplinado, code review e histórico limpo que facilita colaborar.</p></div>
+        <div class="stack reveal"><i class="devicon-docker-plain colored"></i><h3>Docker</h3><p data-i18n="stack_docker">Ambientes reproduzíveis e deploys consistentes, sem o clássico “na minha máquina funciona”.</p></div>
       </div>
     </section>
-    <section
-      id="shadow"
-      class="absolute sm:w-[25vw] w-[90vw] sm:h-[80vh] h-[90vh] rounded-lg bg-green-500 blur-sm"
-    ></section>
-    <script>
-      const devTimer = new Date().getFullYear() - 2020;
-      document.querySelector(
-        "#aboutme"
-      ).innerHTML = `Olá, sou um desenvolvedor fullstack com mais de ${devTimer} anos de experiência, a cada dia desbravando o mundo da programação em busca de aperfeiçoamento contínuo.`;
-      document.querySelector("#github").addEventListener("click", () => {
-        window.open("https://github.com/ClaudioBzrr"), "_blank";
+
+    <!-- PROJECTS -->
+    <section class="block wrap" id="projetos">
+      <p class="kicker reveal" data-i18n="projects_kicker">Portfólio</p>
+      <h2 class="title reveal" data-i18n="projects_title">Projetos que resolvem problemas reais</h2>
+      <p class="sub reveal" data-i18n="projects_sub">Uma seleção de ferramentas e sistemas que criei para automatizar tarefas, organizar dados e acelerar fluxos de trabalho. Cada um nasceu de uma dor concreta — e entrega valor desde o primeiro uso.</p>
+      <div class="projects">
+        <article class="card reveal">
+          <div class="card-icon">🎬</div>
+          <h3>Clipfy</h3>
+          <p data-i18n="p_clipfy">Junte seus videoclipes em segundos. O Clipfy concatena vídeos de forma simples e direta — perfeito para criadores que querem montar conteúdo sem fricção, sem editor pesado e sem perder tempo.</p>
+          <div class="card-tags"><span class="mini">TypeScript</span><span class="mini">Node.js</span><span class="mini">Media</span></div>
+          <div class="card-foot"><a class="btn btn-ghost btn-sm" href="https://github.com/ClaudioBzrr/clipfy" target="_blank" rel="noopener" data-i18n="card_code">Ver código ↗</a></div>
+        </article>
+        <article class="card reveal">
+          <div class="card-icon">🔐</div>
+          <h3>UserRegister</h3>
+          <p data-i18n="p_userregister">Sistema completo de login e cadastro: a base sólida que todo produto precisa. Autenticação, registro e organização de usuários com TypeScript — pronta para evoluir para qualquer SaaS ou app.</p>
+          <div class="card-tags"><span class="mini">TypeScript</span><span class="mini">Auth</span><span class="mini">Fullstack</span></div>
+          <div class="card-foot"><a class="btn btn-ghost btn-sm" href="https://github.com/ClaudioBzrr/UserRegister" target="_blank" rel="noopener" data-i18n="card_code">Ver código ↗</a></div>
+        </article>
+        <article class="card reveal">
+          <div class="card-icon">📸</div>
+          <h3>OpenScreenshotter</h3>
+          <p data-i18n="p_screenshotter">Capture, documente, compartilhe. Uma ferramenta open-source para screenshots rápidas do seu fluxo de trabalho — ideal para QA, documentação e times que vivem de evidência visual.</p>
+          <div class="card-tags"><span class="mini">TypeScript</span><span class="mini">Open Source</span><span class="mini">Tooling</span></div>
+          <div class="card-foot"><a class="btn btn-ghost btn-sm" href="https://github.com/ClaudioBzrr/openscreenshotter" target="_blank" rel="noopener" data-i18n="card_code">Ver código ↗</a></div>
+        </article>
+        <article class="card reveal">
+          <div class="card-icon">📊</div>
+          <h3>CSV → XLSX Converter</h3>
+          <p data-i18n="p_csv">Diga adeus à conversão manual de planilhas. Converta CSV em XLSX com um comando — rápido, confiável e perfeito para rotinas financeiras, relatórios e importações em massa.</p>
+          <div class="card-tags"><span class="mini">TypeScript</span><span class="mini">Automation</span><span class="mini">Data</span></div>
+          <div class="card-foot"><a class="btn btn-ghost btn-sm" href="https://github.com/ClaudioBzrr/simple-csv-to-xlsx-converter" target="_blank" rel="noopener" data-i18n="card_code">Ver código ↗</a></div>
+        </article>
+        <article class="card reveal">
+          <div class="card-icon">🏦</div>
+          <h3>Gerador TXT Serasa</h3>
+          <p data-i18n="p_serasa">Integração financeira sem dor de cabeça: gera arquivos TXT no layout exigido para importação no Serasa. Precisão de formato, menos retrabalho e conformidade garantida.</p>
+          <div class="card-tags"><span class="mini">TypeScript</span><span class="mini">Finance</span><span class="mini">Integration</span></div>
+          <div class="card-foot"><a class="btn btn-ghost btn-sm" href="https://github.com/ClaudioBzrr/gerador-txt-import-serasa" target="_blank" rel="noopener" data-i18n="card_code">Ver código ↗</a></div>
+        </article>
+        <article class="card reveal">
+          <div class="card-icon">🌙</div>
+          <h3>React Darkside UI</h3>
+          <p data-i18n="p_darkside">Um kit de componentes React com estética dark impecável. Acelere a criação de interfaces elegantes e consistentes — porque produto bonito também converte mais.</p>
+          <div class="card-tags"><span class="mini">React</span><span class="mini">UI Kit</span><span class="mini">Design System</span></div>
+          <div class="card-foot"><a class="btn btn-ghost btn-sm" href="https://github.com/ClaudioBzrr/react-darkside-ui" target="_blank" rel="noopener" data-i18n="card_code">Ver código ↗</a></div>
+        </article>
+      </div>
+      <div style="margin-top:18px" class="reveal">
+        <a class="btn btn-ghost" href="https://github.com/ClaudioBzrr?tab=repositories" target="_blank" rel="noopener" data-i18n="projects_more">Explorar todos os repositórios no GitHub ↗</a>
+      </div>
+    </section>
+
+    <!-- ABOUT + PATH -->
+    <section class="block wrap" id="sobre">
+      <p class="kicker reveal" data-i18n="about_kicker">Sobre mim</p>
+      <h2 class="title reveal" data-i18n="about_title">Código limpo, obsessão por resultado</h2>
+      <div class="about-grid" style="margin-top:20px">
+        <div class="panel reveal">
+          <h3 data-i18n="about_h">Prazer, Claudio 👋</h3>
+          <p data-i18n="about_p1">Sou desenvolvedor fullstack desde 2020, movido por uma curiosidade que nunca desliga. Minha especialidade é pegar processos manuais, confusos ou lentos — e transformá-los em software simples que as pessoas adoram usar.</p>
+          <p data-i18n="about_p2">Trabalho com o ecossistema JavaScript/TypeScript de ponta a ponta: React no front, Node + Express no back e PostgreSQL como fonte de verdade. Entrego com testes, documentação e aquele cuidado extra com performance e UX.</p>
+          <ul class="check">
+            <li><span class="tick">✓</span><span data-i18n="about_b1"><b>Automações que pagam o investimento:</b> menos tarefas repetitivas, menos erros humanos.</span></li>
+            <li><span class="tick">✓</span><span data-i18n="about_b2"><b>APIs seguras e bem documentadas,</b> prontas para escalar com seu time.</span></li>
+            <li><span class="tick">✓</span><span data-i18n="about_b3"><b>Interfaces que convertem:</b> rápidas, responsivas e acessíveis em qualquer dispositivo.</span></li>
+          </ul>
+        </div>
+        <div class="panel reveal" id="trajetoria">
+          <h3 data-i18n="path_h">Trajetória</h3>
+          <div class="timeline">
+            <div class="t-item"><strong>2020 →</strong><div><h4 data-i18n="path_1t">Início na programação</h4><p data-i18n="path_1d">Mergulho no desenvolvimento web e nos fundamentos que sustentam tudo até hoje.</p></div></div>
+            <div class="t-item"><strong>2021–22</strong><div><h4 data-i18n="path_2t">Fullstack na prática</h4><p data-i18n="path_2d">Sistemas de usuários, APIs e apps como Clipfy e UserRegister: do conceito ao deploy.</p></div></div>
+            <div class="t-item"><strong>2023–25</strong><div><h4 data-i18n="path_3t">Automação e dados</h4><p data-i18n="path_3d">Ferramentas de produtividade e integração (CSV→XLSX, Serasa, renomeadores) que eliminam trabalho manual.</p></div></div>
+            <div class="t-item"><strong>2026</strong><div><h4 data-i18n="path_4t">Hoje</h4><p data-i18n="path_4d">Construindo produtos open-source e soluções sob medida — sempre com foco em impacto mensurável.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="block wrap" id="contato">
+      <div class="contact reveal">
+        <div>
+          <p class="kicker" data-i18n="contact_kicker">Contato</p>
+          <h2 data-i18n="contact_title">Vamos tirar sua ideia do papel?</h2>
+          <p data-i18n="contact_sub">Me conte seu desafio — um sistema novo, uma automação urgente ou aquele MVP que precisa sair rápido. Respondo com proposta clara, prazo realista e código de qualidade.</p>
+          <div class="contact-actions">
+            <a class="btn btn-primary" href="https://github.com/ClaudioBzrr" target="_blank" rel="noopener" data-i18n="contact_github">Chamar no GitHub ↗</a>
+            <a class="btn btn-ghost" href="https://github.com/ClaudioBzrr?tab=repositories" target="_blank" rel="noopener" data-i18n="contact_work">Ver meu trabalho</a>
+          </div>
+        </div>
+        <div class="contact-side">
+          <a class="contact-line" href="https://github.com/ClaudioBzrr" target="_blank" rel="noopener"><span class="contact-ico">🐙</span><div><b>GitHub</b><span>github.com/ClaudioBzrr</span></div></a>
+          <a class="contact-line" href="https://github.com/ClaudioBzrr/portfolio" target="_blank" rel="noopener"><span class="contact-ico">💼</span><div><b data-i18n="contact_portfolio">Portfólio</b><span data-i18n="contact_portfolio_d">Este site — feito com carinho</span></div></a>
+          <div class="contact-line"><span class="contact-ico">⚡</span><div><b data-i18n="contact_reply">Resposta rápida</b><span data-i18n="contact_reply_d">Costumo responder em até 24h</span></div></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap foot">
+      <span>© <span id="year"></span> Claudio Bezerra · <span data-i18n="foot_made">Feito com foco em performance e simplicidade.</span></span>
+      <span><a href="#top" style="text-decoration:none" data-i18n="foot_top">Voltar ao topo ↑</a></span>
+    </div>
+  </footer>
+
+  <script>
+    const I18N = {
+      "pt-BR": {
+        brand_sub: "Desenvolvedor Fullstack",
+        nav_about: "Sobre", nav_stack: "Tecnologias", nav_projects: "Projetos", nav_path: "Trajetória", nav_contact: "Contato",
+        hero_badge: "Disponível para novos projetos",
+        hero_title_1: "Eu transformo ideias em",
+        hero_title_2: "software rápido e confiável.",
+        hero_lede: "Olá, sou o Claudio Bezerra — desenvolvedor fullstack com mais de 6 anos de experiência em React, Node.js, TypeScript, Express e PostgreSQL. Crio aplicações, automações e ferramentas que economizam tempo, reduzem erros e geram resultado de verdade.",
+        hero_cta_projects: "Ver projetos ↓", hero_cta_github: "GitHub ↗", hero_cta_contact: "Falar comigo",
+        stat_years: "anos programando", stat_repos: "repositórios públicos", stat_stack: "stack: front + back",
+        profile_role: "Fullstack · React · Node · TypeScript",
+        profile_text: "Foco em código limpo, performance e experiência do usuário. Do MVP ao sistema em produção: eu projeto, construo e cuido da evolução.",
+        profile_hire: "Contratar", profile_code: "Ver código",
+        stack_title: "Tecnologias que domino de ponta a ponta",
+        stack_sub: "Do pixel da interface à query do banco: um ecossistema moderno, tipado e pronto para escalar.",
+        stack_react: "Interfaces rápidas, componentizadas e acessíveis — do landing page ao dashboard complexo.",
+        stack_ts: "Código previsível e seguro, com menos bugs em produção e refactors sem medo.",
+        stack_node: "APIs e automações performáticas, CLIs e workers que resolvem trabalho chato sozinhos.",
+        stack_express: "Backends enxutos e bem estruturados, com autenticação, validação e boas práticas REST.",
+        stack_pg: "Modelagem sólida, consultas otimizadas e dados íntegros para crescer sem sustos.",
+        stack_js: "Base fluente no ecossistema web: do DOM ao async, do browser ao servidor.",
+        stack_git: "Versionamento disciplinado, code review e histórico limpo que facilita colaborar.",
+        stack_docker: "Ambientes reproduzíveis e deploys consistentes, sem o clássico “na minha máquina funciona”.",
+        projects_kicker: "Portfólio",
+        projects_title: "Projetos que resolvem problemas reais",
+        projects_sub: "Uma seleção de ferramentas e sistemas que criei para automatizar tarefas, organizar dados e acelerar fluxos de trabalho. Cada um nasceu de uma dor concreta — e entrega valor desde o primeiro uso.",
+        p_clipfy: "Junte seus videoclipes em segundos. O Clipfy concatena vídeos de forma simples e direta — perfeito para criadores que querem montar conteúdo sem fricção, sem editor pesado e sem perder tempo.",
+        p_userregister: "Sistema completo de login e cadastro: a base sólida que todo produto precisa. Autenticação, registro e organização de usuários com TypeScript — pronta para evoluir para qualquer SaaS ou app.",
+        p_screenshotter: "Capture, documente, compartilhe. Uma ferramenta open-source para screenshots rápidas do seu fluxo de trabalho — ideal para QA, documentação e times que vivem de evidência visual.",
+        p_csv: "Diga adeus à conversão manual de planilhas. Converta CSV em XLSX com um comando — rápido, confiável e perfeito para rotinas financeiras, relatórios e importações em massa.",
+        p_serasa: "Integração financeira sem dor de cabeça: gera arquivos TXT no layout exigido para importação no Serasa. Precisão de formato, menos retrabalho e conformidade garantida.",
+        p_darkside: "Um kit de componentes React com estética dark impecável. Acelere a criação de interfaces elegantes e consistentes — porque produto bonito também converte mais.",
+        card_code: "Ver código ↗",
+        projects_more: "Explorar todos os repositórios no GitHub ↗",
+        about_kicker: "Sobre mim",
+        about_title: "Código limpo, obsessão por resultado",
+        about_h: "Prazer, Claudio 👋",
+        about_p1: "Sou desenvolvedor fullstack desde 2020, movido por uma curiosidade que nunca desliga. Minha especialidade é pegar processos manuais, confusos ou lentos — e transformá-los em software simples que as pessoas adoram usar.",
+        about_p2: "Trabalho com o ecossistema JavaScript/TypeScript de ponta a ponta: React no front, Node + Express no back e PostgreSQL como fonte de verdade. Entrego com testes, documentação e aquele cuidado extra com performance e UX.",
+        about_b1: "Automações que pagam o investimento: menos tarefas repetitivas, menos erros humanos.",
+        about_b2: "APIs seguras e bem documentadas, prontas para escalar com seu time.",
+        about_b3: "Interfaces que convertem: rápidas, responsivas e acessíveis em qualquer dispositivo.",
+        path_h: "Trajetória",
+        path_1t: "Início na programação", path_1d: "Mergulho no desenvolvimento web e nos fundamentos que sustentam tudo até hoje.",
+        path_2t: "Fullstack na prática", path_2d: "Sistemas de usuários, APIs e apps como Clipfy e UserRegister: do conceito ao deploy.",
+        path_3t: "Automação e dados", path_3d: "Ferramentas de produtividade e integração (CSV→XLSX, Serasa, renomeadores) que eliminam trabalho manual.",
+        path_4t: "Hoje", path_4d: "Construindo produtos open-source e soluções sob medida — sempre com foco em impacto mensurável.",
+        contact_kicker: "Contato",
+        contact_title: "Vamos tirar sua ideia do papel?",
+        contact_sub: "Me conte seu desafio — um sistema novo, uma automação urgente ou aquele MVP que precisa sair rápido. Respondo com proposta clara, prazo realista e código de qualidade.",
+        contact_github: "Chamar no GitHub ↗", contact_work: "Ver meu trabalho",
+        contact_portfolio: "Portfólio", contact_portfolio_d: "Este site — feito com carinho",
+        contact_reply: "Resposta rápida", contact_reply_d: "Costumo responder em até 24h",
+        foot_made: "Feito com foco em performance e simplicidade.", foot_top: "Voltar ao topo ↑",
+        doc_title: "Claudio Bezerra — Desenvolvedor Fullstack"
+      },
+      "en-US": {
+        brand_sub: "Fullstack Developer",
+        nav_about: "About", nav_stack: "Stack", nav_projects: "Projects", nav_path: "Journey", nav_contact: "Contact",
+        hero_badge: "Available for new projects",
+        hero_title_1: "I turn ideas into",
+        hero_title_2: "fast, reliable software.",
+        hero_lede: "Hi, I'm Claudio Bezerra — a fullstack developer with 6+ years of experience in React, Node.js, TypeScript, Express and PostgreSQL. I build apps, automations and tools that save time, cut errors and deliver real results.",
+        hero_cta_projects: "View projects ↓", hero_cta_github: "GitHub ↗", hero_cta_contact: "Talk to me",
+        stat_years: "years coding", stat_repos: "public repositories", stat_stack: "stack: front + back",
+        profile_role: "Fullstack · React · Node · TypeScript",
+        profile_text: "Focused on clean code, performance and user experience. From MVP to production: I design, build and keep it evolving.",
+        profile_hire: "Hire me", profile_code: "View code",
+        stack_title: "Technologies I master end to end",
+        stack_sub: "From UI pixels to database queries: a modern, typed ecosystem ready to scale.",
+        stack_react: "Fast, component-based, accessible interfaces — from landing pages to complex dashboards.",
+        stack_ts: "Predictable, safe code with fewer production bugs and fearless refactors.",
+        stack_node: "High-performance APIs and automations, CLIs and workers that handle boring work for you.",
+        stack_express: "Lean, well-structured backends with auth, validation and solid REST practices.",
+        stack_pg: "Solid modeling, optimized queries and trustworthy data to grow with confidence.",
+        stack_js: "Fluent across the web ecosystem: from DOM to async, browser to server.",
+        stack_git: "Disciplined versioning, code review and clean history that makes collaboration easy.",
+        stack_docker: "Reproducible environments and consistent deploys — no more “works on my machine”.",
+        projects_kicker: "Portfolio",
+        projects_title: "Projects that solve real problems",
+        projects_sub: "A curated set of tools and systems I built to automate tasks, organize data and speed up workflows. Each one started from a concrete pain — and delivers value from the very first use.",
+        p_clipfy: "Join your video clips in seconds. Clipfy concatenates videos simply and directly — perfect for creators who want to ship content without friction, heavy editors or wasted time.",
+        p_userregister: "A complete login & signup system: the solid foundation every product needs. Auth, registration and user management in TypeScript — ready to grow into any SaaS or app.",
+        p_screenshotter: "Capture, document, share. An open-source tool for quick screenshots of your workflow — ideal for QA, docs and teams that run on visual evidence.",
+        p_csv: "Say goodbye to manual spreadsheet conversion. Turn CSV into XLSX with one command — fast, reliable and perfect for finance routines, reports and bulk imports.",
+        p_serasa: "Painless financial integration: generates TXT files in the exact layout required for Serasa imports. Format precision, less rework, guaranteed compliance.",
+        p_darkside: "A React component kit with a flawless dark aesthetic. Ship elegant, consistent interfaces faster — because beautiful products convert better too.",
+        card_code: "View code ↗",
+        projects_more: "Explore all repositories on GitHub ↗",
+        about_kicker: "About me",
+        about_title: "Clean code, obsessed with outcomes",
+        about_h: "Nice to meet you, I'm Claudio 👋",
+        about_p1: "I'm a fullstack developer since 2020, driven by a curiosity that never switches off. My specialty is taking manual, messy or slow processes — and turning them into simple software people love to use.",
+        about_p2: "I work across the JavaScript/TypeScript ecosystem: React on the front, Node + Express on the back, PostgreSQL as the source of truth. I ship with tests, docs and extra care for performance and UX.",
+        about_b1: "Automations that pay for themselves: fewer repetitive tasks, fewer human errors.",
+        about_b2: "Secure, well-documented APIs, ready to scale with your team.",
+        about_b3: "Interfaces that convert: fast, responsive and accessible on any device.",
+        path_h: "Journey",
+        path_1t: "Started programming", path_1d: "Deep dive into web development and the fundamentals that hold up everything today.",
+        path_2t: "Fullstack in practice", path_2d: "User systems, APIs and apps like Clipfy and UserRegister: from concept to deploy.",
+        path_3t: "Automation & data", path_3d: "Productivity and integration tools (CSV→XLSX, Serasa, renamers) that erase manual work.",
+        path_4t: "Today", path_4d: "Building open-source products and tailored solutions — always focused on measurable impact.",
+        contact_kicker: "Contact",
+        contact_title: "Let's bring your idea to life?",
+        contact_sub: "Tell me about your challenge — a new system, an urgent automation, or that MVP that needs to ship fast. You'll get a clear proposal, a realistic timeline and quality code.",
+        contact_github: "Reach out on GitHub ↗", contact_work: "See my work",
+        contact_portfolio: "Portfolio", contact_portfolio_d: "This site — crafted with care",
+        contact_reply: "Fast reply", contact_reply_d: "I usually reply within 24h",
+        foot_made: "Built with a focus on performance and simplicity.", foot_top: "Back to top ↑",
+        doc_title: "Claudio Bezerra — Fullstack Developer"
+      }
+    };
+
+    const btnPt = document.getElementById("btn-pt");
+    const btnEn = document.getElementById("btn-en");
+
+    function setLang(lang) {
+      const dict = I18N[lang] || I18N["pt-BR"];
+      document.documentElement.lang = lang;
+      document.title = dict.doc_title;
+      document.querySelectorAll("[data-i18n]").forEach((el) => {
+        const key = el.getAttribute("data-i18n");
+        if (dict[key] !== undefined) {
+          // Preserve <b> markup for checklist items: only first text node is plain in our case,
+          // so innerHTML is safe here (all strings are ours, no user input).
+          el.innerHTML = dict[key];
+        }
       });
-    </script>
-  </body>
+      btnPt.classList.toggle("active", lang === "pt-BR");
+      btnEn.classList.toggle("active", lang === "en-US");
+      try { localStorage.setItem("portfolio-lang", lang); } catch (e) {}
+    }
+
+    btnPt.addEventListener("click", () => setLang("pt-BR"));
+    btnEn.addEventListener("click", () => setLang("en-US"));
+
+    // Init language: saved preference, else browser language
+    (function initLang() {
+      let saved = null;
+      try { saved = localStorage.getItem("portfolio-lang"); } catch (e) {}
+      if (saved === "pt-BR" || saved === "en-US") return setLang(saved);
+      const nav = (navigator.language || "pt-BR").toLowerCase();
+      setLang(nav.startsWith("en") ? "en-US" : "pt-BR");
+    })();
+
+    // Mobile menu
+    const burger = document.getElementById("hamburger");
+    const mobileMenu = document.getElementById("mobileMenu");
+    function setMenu(open) {
+      mobileMenu.classList.toggle("open", open);
+      burger.setAttribute("aria-expanded", String(open));
+      burger.textContent = open ? "✕" : "☰";
+    }
+    burger.addEventListener("click", () => setMenu(!mobileMenu.classList.contains("open")));
+    mobileMenu.querySelectorAll(".mobile-nav a").forEach((a) => a.addEventListener("click", () => setMenu(false)));
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape") setMenu(false); });
+    window.addEventListener("resize", () => { if (window.innerWidth > 960) setMenu(false); });
+
+    // Scrollspy: highlight current section in desktop + mobile nav
+    (function scrollspy() {
+      const map = {};
+      document.querySelectorAll('.links a[href^="#"], .mobile-nav a[href^="#"]').forEach((a) => {
+        const id = a.getAttribute("href");
+        if (id && id.length > 1) { (map[id] = map[id] || []).push(a); }
+      });
+      const ids = Object.keys(map);
+      if (!ids.length || !("IntersectionObserver" in window)) return;
+      function activate(id) {
+        ids.forEach((key) => (map[key] || []).forEach((a) => a.classList.toggle("active", key === id)));
+      }
+      const spy = new IntersectionObserver((entries) => {
+        entries.forEach((e) => { if (e.isIntersecting) activate("#" + e.target.id); });
+      }, { rootMargin: "-40% 0px -55% 0px", threshold: 0 });
+      ids.forEach((id) => {
+        const sec = document.querySelector(id);
+        if (sec) spy.observe(sec);
+      });
+    })();
+
+    // Reveal on scroll
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("visible"); io.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
 </html>
