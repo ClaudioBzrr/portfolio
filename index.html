@@ -1,13 +1,156 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+  <!-- ============================================================
+    SEO / GEO / LLMO — configuração central
+    SITE_URL canônica: https://claudiobzrr.github.io/portfolio/
+    Se publicar domínio próprio, troque TODAS as ocorrências abaixo.
+  ============================================================ -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Claudio Bezerra — Desenvolvedor Fullstack React, Node.js, TypeScript e PostgreSQL. Transformo ideias em produtos rápidos, seguros e escaláveis." />
-  <title>Claudio Bezerra — Desenvolvedor Fullstack</title>
+  <title>Claudio Bezerra — Desenvolvedor Fullstack React, Node e TypeScript</title>
+  <meta name="description" content="Claudio Bezerra, desenvolvedor fullstack com 6+ anos de experiência. Crio apps React, APIs Node.js/Express e automações com TypeScript e PostgreSQL. Veja projetos e peça um orçamento." />
+  <meta name="keywords" content="desenvolvedor fullstack, desenvolvedor react, desenvolvedor node.js, typescript, express, postgresql, prisma orm, automação, freelancer brasil, portfólio desenvolvedor, fullstack developer brazil" />
+  <meta name="author" content="Claudio Bezerra" />
+  <meta name="creator" content="Claudio Bezerra" />
+  <meta name="publisher" content="Claudio Bezerra" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta name="theme-color" content="#070b16" />
+  <meta name="color-scheme" content="dark light" />
+  <meta name="format-detection" content="telephone=no" />
+
+  <!-- GEO local: base Brasil, atendimento remoto mundial -->
+  <meta name="geo.region" content="BR" />
+  <meta name="geo.placename" content="Brasil — atendimento remoto mundial" />
+  <meta name="ICBM" content="-14.2350, -51.9253" />
+
+  <!-- Canônica + hreflang (PT padrão, EN alternativo via ?lang=en) -->
+  <link rel="canonical" href="https://claudiobzrr.github.io/portfolio/" />
+  <link rel="alternate" hreflang="pt-BR" href="https://claudiobzrr.github.io/portfolio/" />
+  <link rel="alternate" hreflang="en" href="https://claudiobzrr.github.io/portfolio/?lang=en" />
+  <link rel="alternate" hreflang="x-default" href="https://claudiobzrr.github.io/portfolio/" />
+
+  <!-- Descoberta por máquinas/LLMs -->
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="https://claudiobzrr.github.io/portfolio/sitemap.xml" />
+  <link rel="alternate" type="text/plain" title="LLMs.txt — resumo legível por IA" href="https://claudiobzrr.github.io/portfolio/llms.txt" />
+  <link rel="author" type="text/plain" href="https://github.com/ClaudioBzrr" />
+  <link rel="me" href="https://github.com/ClaudioBzrr" />
+
+  <!-- Ícones / PWA -->
+  <link rel="icon" type="image/svg+xml" href="https://claudiobzrr.github.io/portfolio/favicon.svg" />
+  <link rel="apple-touch-icon" href="https://avatars.githubusercontent.com/u/39713988?v=4" />
+  <link rel="manifest" href="https://claudiobzrr.github.io/portfolio/site.webmanifest" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Claudio Bezerra — Portfólio" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:url" content="https://claudiobzrr.github.io/portfolio/" />
+  <meta property="og:title" content="Claudio Bezerra — Desenvolvedor Fullstack React, Node e TypeScript" />
+  <meta property="og:description" content="6+ anos criando apps React, APIs Node.js/Express e automações com TypeScript e PostgreSQL. Veja projetos reais e fale comigo." />
+  <!-- NOTA: se trocar a foto do GitHub, o parâmetro ?v=4 muda.
+       Pegue a nova URL direta via: curl.exe -sI "https://github.com/ClaudioBzrr.png"
+       e atualize og:image / twitter:image / apple-touch-icon / avatar abaixo. -->
+  <meta property="og:image" content="https://avatars.githubusercontent.com/u/39713988?v=4" />
+  <meta property="og:image:secure_url" content="https://avatars.githubusercontent.com/u/39713988?v=4" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:alt" content="Foto de perfil de Claudio Bezerra, desenvolvedor fullstack" />
+  <meta property="og:image:width" content="460" />
+  <meta property="og:image:height" content="460" />
+  <meta property="profile:first_name" content="Claudio" />
+  <meta property="profile:last_name" content="Bezerra" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Claudio Bezerra — Desenvolvedor Fullstack React, Node e TypeScript" />
+  <meta name="twitter:description" content="Apps React, APIs Node.js/Express e automações com TypeScript e PostgreSQL. 6+ anos de experiência. Veja projetos e peça um orçamento." />
+  <meta name="twitter:image" content="https://avatars.githubusercontent.com/u/39713988?v=4" />
+  <meta name="twitter:image:alt" content="Foto de perfil de Claudio Bezerra, desenvolvedor fullstack" />
+
+  <!-- Performance: fontes + avatar -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="dns-prefetch" href="https://github.com" />
+  <link rel="preload" as="image" href="https://avatars.githubusercontent.com/u/39713988?v=4" fetchpriority="high" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Dados estruturados: Person + WebSite + WebPage + FAQ + Projetos (GEO/LLMO) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://claudiobzrr.github.io/portfolio/#pessoa",
+        "name": "Claudio Bezerra",
+        "alternateName": "ClaudioBzrr",
+        "url": "https://claudiobzrr.github.io/portfolio/",
+        "image": "https://avatars.githubusercontent.com/u/39713988?v=4",
+        "jobTitle": "Desenvolvedor Fullstack",
+        "description": "Desenvolvedor fullstack no Brasil com 6+ anos de experiência em React, Node.js, TypeScript, Express e PostgreSQL. Cria aplicações web, APIs REST e automações.",
+        "nationality": "BR",
+        "homeLocation": { "@type": "Country", "name": "Brasil" },
+        "areaServed": [{ "@type": "Country", "name": "Brasil" }, { "@type": "DefinedRegion", "name": "Worldwide" }],
+        "knowsAbout": ["React", "TypeScript", "Node.js", "Express", "PostgreSQL", "Prisma ORM", "JavaScript", "REST APIs", "Docker", "Git", "Automação", "Desenvolvimento Fullstack"],
+        "knowsLanguage": ["pt-BR", "en-US"],
+        "sameAs": ["https://github.com/ClaudioBzrr"]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://claudiobzrr.github.io/portfolio/#site",
+        "url": "https://claudiobzrr.github.io/portfolio/",
+        "name": "Claudio Bezerra — Portfólio",
+        "inLanguage": ["pt-BR", "en-US"],
+        "author": { "@id": "https://claudiobzrr.github.io/portfolio/#pessoa" },
+        "publisher": { "@id": "https://claudiobzrr.github.io/portfolio/#pessoa" }
+      },
+      {
+        "@type": "ProfilePage",
+        "@id": "https://claudiobzrr.github.io/portfolio/#pagina",
+        "url": "https://claudiobzrr.github.io/portfolio/",
+        "name": "Claudio Bezerra — Desenvolvedor Fullstack React, Node e TypeScript",
+        "description": "Portfólio de Claudio Bezerra: projetos, stack, trajetória e contato. Fullstack React, Node.js, TypeScript, Express e PostgreSQL.",
+        "inLanguage": ["pt-BR", "en-US"],
+        "isPartOf": { "@id": "https://claudiobzrr.github.io/portfolio/#site" },
+        "about": { "@id": "https://claudiobzrr.github.io/portfolio/#pessoa" },
+        "mainEntity": { "@id": "https://claudiobzrr.github.io/portfolio/#pessoa" },
+        "datePublished": "2024-01-15",
+        "dateModified": "2026-09-10",
+        "speakable": {
+          "@type": "SpeakableSpecification",
+          "cssSelector": ["h1", ".lede", "#resumo-ia li"]
+        }
+      },
+      {
+        "@type": "ItemList",
+        "@id": "https://claudiobzrr.github.io/portfolio/#projetos-lista",
+        "name": "Projetos de Claudio Bezerra",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "url": "https://github.com/ClaudioBzrr/clipfy", "name": "Clipfy", "description": "Concatena videoclipes de forma simples para criadores de conteúdo." },
+          { "@type": "ListItem", "position": 2, "url": "https://github.com/ClaudioBzrr/UserRegister", "name": "UserRegister", "description": "Sistema completo de login e cadastro, base para SaaS." },
+          { "@type": "ListItem", "position": 3, "url": "https://github.com/ClaudioBzrr/openscreenshotter", "name": "OpenScreenshotter", "description": "Ferramenta open-source de screenshots para QA e documentação." },
+          { "@type": "ListItem", "position": 4, "url": "https://github.com/ClaudioBzrr/simple-csv-to-xlsx-converter", "name": "CSV para XLSX Converter", "description": "Converte CSV em XLSX com um comando." },
+          { "@type": "ListItem", "position": 5, "url": "https://github.com/ClaudioBzrr/gerador-txt-import-serasa", "name": "Gerador TXT Serasa", "description": "Gera TXT no layout exigido para importação no Serasa." },
+          { "@type": "ListItem", "position": 6, "url": "https://github.com/ClaudioBzrr/react-darkside-ui", "name": "React Darkside UI", "description": "Kit de componentes React com estética dark." }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://claudiobzrr.github.io/portfolio/#faq",
+        "mainEntity": [
+          { "@type": "Question", "name": "Quem é Claudio Bezerra?", "acceptedAnswer": { "@type": "Answer", "text": "Claudio Bezerra é um desenvolvedor fullstack brasileiro com mais de 6 anos de experiência em React, Node.js, TypeScript, Express e PostgreSQL." } },
+          { "@type": "Question", "name": "Quais serviços Claudio Bezerra oferece?", "acceptedAnswer": { "@type": "Answer", "text": "Aplicações web fullstack, APIs REST com Express, automações e ferramentas internas, UI kits React e evolução de sistemas em produção, com testes e documentação." } },
+          { "@type": "Question", "name": "Onde Claudio Bezerra atende?", "acceptedAnswer": { "@type": "Answer", "text": "Base no Brasil, com atendimento remoto para clientes em qualquer lugar do mundo." } },
+          { "@type": "Question", "name": "Como contratar Claudio Bezerra?", "acceptedAnswer": { "@type": "Answer", "text": "Pelo GitHub (github.com/ClaudioBzrr) ou pela seção de contato do portfólio. O tempo típico de resposta é de até 24 horas." } },
+          { "@type": "Question", "name": "Qual é a stack principal?", "acceptedAnswer": { "@type": "Answer", "text": "React, TypeScript, Node.js, Express, PostgreSQL com Prisma ORM, JavaScript, Docker e Git/GitHub." } },
+          { "@type": "Question", "name": "Qual é o diferencial?", "acceptedAnswer": { "@type": "Answer", "text": "Código limpo e tipado com foco em ROI: menos tarefas repetitivas, menos erros humanos, performance, testes e documentação." } }
+        ]
+      }
+    ]
+  }
+  </script>
   <style>
     :root {
       --bg: #070b16;
@@ -43,6 +186,31 @@
       overflow-x: hidden;
     }
     a { color: inherit; }
+    .skip-link {
+      position: absolute; left: 16px; top: -60px; z-index: 100;
+      background: var(--accent); color: #04120c; font-weight: 800; font-size: 14px;
+      padding: 12px 18px; border-radius: 10px; text-decoration: none;
+      transition: top .2s;
+    }
+    .skip-link:focus { top: 12px; }
+    .ai-summary {
+      margin-top: 20px; background: rgba(16,185,129,.07);
+      border: 1px solid rgba(16,185,129,.3); border-radius: 14px;
+      padding: 18px 20px; font-size: 14px; color: var(--muted);
+    }
+    .ai-summary strong { color: var(--text); }
+    .ai-summary ul { margin: 10px 0 0; padding-left: 20px; display: grid; gap: 6px; }
+    .faq-list { display: grid; gap: 12px; margin-top: 20px; }
+    .faq-list details {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 14px; padding: 16px 18px; transition: border-color .2s;
+    }
+    .faq-list details[open], .faq-list details:hover { border-color: rgba(16,185,129,.45); }
+    .faq-list summary { cursor: pointer; font-weight: 700; font-size: 15px; list-style: none; }
+    .faq-list summary::-webkit-details-marker { display: none; }
+    .faq-list summary::before { content: "+ "; color: var(--accent-2); font-weight: 800; }
+    .faq-list details[open] summary::before { content: "− "; }
+    .faq-list details p { margin: 10px 0 0; color: var(--muted); font-size: 14.5px; }
     .wrap {
       max-width: var(--max);
       margin: 0 auto;
@@ -313,6 +481,8 @@
   </style>
 </head>
 <body>
+  <a class="skip-link" href="#top" data-i18n="skip">Pular para o conteúdo</a>
+  <noscript><p style="text-align:center;padding:12px;background:#13203d">Este portfólio funciona melhor com JavaScript ativado (alternador de idioma PT/EN e menu mobile). Todo o conteúdo principal permanece legível sem JavaScript.</p></noscript>
   <header>
     <div class="wrap nav">
       <a class="brand" href="#top">
@@ -324,6 +494,7 @@
         <a href="#stack" data-i18n="nav_stack">Tecnologias</a>
         <a href="#projetos" data-i18n="nav_projects">Projetos</a>
         <a href="#trajetoria" data-i18n="nav_path">Trajetória</a>
+        <a href="#faq" data-i18n="nav_faq">FAQ</a>
         <a href="#contato" data-i18n="nav_contact">Contato</a>
       </nav>
       <div class="nav-cta">
@@ -341,6 +512,7 @@
         <a href="#stack" data-i18n="nav_stack">Tecnologias</a>
         <a href="#projetos" data-i18n="nav_projects">Projetos</a>
         <a href="#trajetoria" data-i18n="nav_path">Trajetória</a>
+        <a href="#faq" data-i18n="nav_faq">FAQ</a>
         <a href="#contato" data-i18n="nav_contact">Contato</a>
       </nav>
       <div class="mobile-cta">
@@ -370,7 +542,7 @@
         </div>
         <aside class="profile-card reveal visible">
           <div class="profile-top">
-            <img class="avatar" src="https://github.com/ClaudioBzrr.png" alt="Claudio Bezerra" />
+            <img class="avatar" src="https://avatars.githubusercontent.com/u/39713988?v=4" alt="Foto de perfil de Claudio Bezerra, desenvolvedor fullstack React e Node.js" width="168" height="168" fetchpriority="high" decoding="async" />
             <div>
               <h2>Claudio Bezerra</h2>
               <p data-i18n="profile_role">Fullstack · React · Node · TypeScript</p>
@@ -474,16 +646,59 @@
             <li><span class="tick">✓</span><span data-i18n="about_b2"><b>APIs com Express e dados com Prisma ORM:</b> endpoints seguros, schemas bem modelados e docs prontas para escalar.</span></li>
             <li><span class="tick">✓</span><span data-i18n="about_b3"><b>Interfaces que convertem:</b> rápidas, responsivas e acessíveis em qualquer dispositivo.</span></li>
           </ul>
+          <!-- GEO/LLMO: bloco de fatos citáveis (frases curtas, autocontidas, <40 palavras) -->
+          <aside class="ai-summary" id="resumo-ia" aria-label="Resumo executivo para mecanismos de busca e IAs">
+            <strong data-i18n="ai_title">Resumo em 30 segundos:</strong>
+            <ul>
+              <li data-i18n="ai_1"><strong>Quem:</strong> Claudio Bezerra, desenvolvedor fullstack no Brasil, programando desde 2020.</li>
+              <li data-i18n="ai_2"><strong>Stack:</strong> React, TypeScript, Node.js, Express, PostgreSQL com Prisma ORM, Docker e Git.</li>
+              <li data-i18n="ai_3"><strong>Entrega:</strong> apps web, APIs REST e automações com testes, docs e foco em ROI.</li>
+              <li data-i18n="ai_4"><strong>Onde:</strong> base no Brasil, atendimento remoto mundial, resposta em até 24h.</li>
+            </ul>
+          </aside>
         </div>
         <div class="panel reveal" id="trajetoria">
           <h3 data-i18n="path_h">Trajetória</h3>
           <div class="timeline">
-            <div class="t-item"><strong>2020 →</strong><div><h4 data-i18n="path_1t">Início na programação</h4><p data-i18n="path_1d">Mergulho no desenvolvimento web e nos fundamentos que sustentam tudo até hoje.</p></div></div>
-            <div class="t-item"><strong>2021–22</strong><div><h4 data-i18n="path_2t">Fullstack na prática</h4><p data-i18n="path_2d">Sistemas de usuários, APIs e apps como Clipfy e UserRegister: do conceito ao deploy.</p></div></div>
-            <div class="t-item"><strong>2023–25</strong><div><h4 data-i18n="path_3t">Automação e dados</h4><p data-i18n="path_3d">Ferramentas de produtividade e integração (CSV→XLSX, Serasa, renomeadores) que eliminam trabalho manual.</p></div></div>
-            <div class="t-item"><strong>2026</strong><div><h4 data-i18n="path_4t">Hoje</h4><p data-i18n="path_4d">Construindo produtos open-source e soluções sob medida — sempre com foco em impacto mensurável.</p></div></div>
+            <div class="t-item"><strong><time datetime="2020">2020 →</time></strong><div><h4 data-i18n="path_1t">Início na programação</h4><p data-i18n="path_1d">Mergulho no desenvolvimento web e nos fundamentos que sustentam tudo até hoje.</p></div></div>
+            <div class="t-item"><strong><time datetime="2021">2021–22</time></strong><div><h4 data-i18n="path_2t">Fullstack na prática</h4><p data-i18n="path_2d">Sistemas de usuários, APIs e apps como Clipfy e UserRegister: do conceito ao deploy.</p></div></div>
+            <div class="t-item"><strong><time datetime="2023">2023–25</time></strong><div><h4 data-i18n="path_3t">Automação e dados</h4><p data-i18n="path_3d">Ferramentas de produtividade e integração (CSV→XLSX, Serasa, renomeadores) que eliminam trabalho manual.</p></div></div>
+            <div class="t-item"><strong><time datetime="2026">2026</time></strong><div><h4 data-i18n="path_4t">Hoje</h4><p data-i18n="path_4d">Construindo produtos open-source e soluções sob medida — sempre com foco em impacto mensurável.</p></div></div>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- FAQ — respostas diretas para snippets em destaque e citações de IA -->
+    <section class="block wrap" id="faq" aria-labelledby="faq-title">
+      <p class="kicker reveal" data-i18n="faq_kicker">FAQ</p>
+      <h2 class="title reveal" id="faq-title" data-i18n="faq_title">Perguntas frequentes</h2>
+      <p class="sub reveal" data-i18n="faq_sub">Respostas diretas sobre serviços, stack, prazo e contratação — escritas para leitura humana e citação por mecanismos de busca e IAs.</p>
+      <div class="faq-list reveal">
+        <details name="faq" open>
+          <summary data-i18n="faq_1q">Quem é Claudio Bezerra?</summary>
+          <p data-i18n="faq_1a">Claudio Bezerra é um desenvolvedor fullstack brasileiro com mais de 6 anos de experiência em React, Node.js, TypeScript, Express e PostgreSQL.</p>
+        </details>
+        <details name="faq">
+          <summary data-i18n="faq_2q">Quais serviços você oferece?</summary>
+          <p data-i18n="faq_2a">Aplicações web fullstack, APIs REST com Express, automações e ferramentas internas, UI kits em React e evolução de sistemas em produção — sempre com testes e documentação.</p>
+        </details>
+        <details name="faq">
+          <summary data-i18n="faq_3q">Onde você atende?</summary>
+          <p data-i18n="faq_3a">Base no Brasil, com atendimento remoto para clientes em qualquer lugar do mundo. O portfólio está disponível em português (PT-BR) e inglês (EN-US).</p>
+        </details>
+        <details name="faq">
+          <summary data-i18n="faq_4q">Como contratar ou pedir um orçamento?</summary>
+          <p data-i18n="faq_4a">Pelo GitHub (github.com/ClaudioBzrr) ou pela seção de contato. Descreva o desafio — sistema novo, automação ou MVP — e você recebe proposta clara com prazo realista. Resposta típica em até 24h.</p>
+        </details>
+        <details name="faq">
+          <summary data-i18n="faq_5q">Qual é a sua stack principal?</summary>
+          <p data-i18n="faq_5a">React, TypeScript, Node.js, Express, PostgreSQL com Prisma ORM, JavaScript, Docker e Git/GitHub: do pixel da interface à query do banco.</p>
+        </details>
+        <details name="faq">
+          <summary data-i18n="faq_6q">Qual é o seu diferencial?</summary>
+          <p data-i18n="faq_6a">Código limpo e tipado com foco em retorno sobre o investimento: menos tarefas repetitivas, menos erros humanos, mais performance — e evolução contínua do produto.</p>
+        </details>
       </div>
     </section>
 
@@ -499,18 +714,18 @@
             <a class="btn btn-ghost" href="https://github.com/ClaudioBzrr?tab=repositories" target="_blank" rel="noopener" data-i18n="contact_work">Ver meu trabalho</a>
           </div>
         </div>
-        <div class="contact-side">
-          <a class="contact-line" href="https://github.com/ClaudioBzrr" target="_blank" rel="noopener"><span class="contact-ico">🐙</span><div><b>GitHub</b><span>github.com/ClaudioBzrr</span></div></a>
+        <address class="contact-side" style="font-style:normal">
+          <a class="contact-line" href="https://github.com/ClaudioBzrr" target="_blank" rel="me noopener"><span class="contact-ico">🐙</span><div><b>GitHub</b><span>github.com/ClaudioBzrr</span></div></a>
           <a class="contact-line" href="https://github.com/ClaudioBzrr/portfolio" target="_blank" rel="noopener"><span class="contact-ico">💼</span><div><b data-i18n="contact_portfolio">Portfólio</b><span data-i18n="contact_portfolio_d">Este site — feito com carinho</span></div></a>
           <div class="contact-line"><span class="contact-ico">⚡</span><div><b data-i18n="contact_reply">Resposta rápida</b><span data-i18n="contact_reply_d">Costumo responder em até 24h</span></div></div>
-        </div>
+        </address>
       </div>
     </section>
   </main>
 
   <footer>
     <div class="wrap foot">
-      <span>© <span id="year"></span> Claudio Bezerra · <span data-i18n="foot_made">Feito com foco em performance e simplicidade.</span></span>
+      <span>© <span id="year"></span> Claudio Bezerra · <span data-i18n="foot_made">Feito com foco em performance e simplicidade.</span> <span data-i18n="foot_updated">Atualizado em</span> <time datetime="2026-09-10">10/09/2026</time>.</span>
       <span><a href="#top" style="text-decoration:none" data-i18n="foot_top">Voltar ao topo ↑</a></span>
     </div>
   </footer>
@@ -518,8 +733,30 @@
   <script>
     const I18N = {
       "pt-BR": {
+        skip: "Pular para o conteúdo",
         brand_sub: "Desenvolvedor Fullstack",
-        nav_about: "Sobre", nav_stack: "Tecnologias", nav_projects: "Projetos", nav_path: "Trajetória", nav_contact: "Contato",
+        nav_about: "Sobre", nav_stack: "Tecnologias", nav_projects: "Projetos", nav_path: "Trajetória", nav_faq: "FAQ", nav_contact: "Contato",
+        ai_title: "Resumo em 30 segundos:",
+        ai_1: "<strong>Quem:</strong> Claudio Bezerra, desenvolvedor fullstack no Brasil, programando desde 2020.",
+        ai_2: "<strong>Stack:</strong> React, TypeScript, Node.js, Express, PostgreSQL com Prisma ORM, Docker e Git.",
+        ai_3: "<strong>Entrega:</strong> apps web, APIs REST e automações com testes, docs e foco em ROI.",
+        ai_4: "<strong>Onde:</strong> base no Brasil, atendimento remoto mundial, resposta em até 24h.",
+        faq_kicker: "FAQ",
+        faq_title: "Perguntas frequentes",
+        faq_sub: "Respostas diretas sobre serviços, stack, prazo e contratação — escritas para leitura humana e citação por mecanismos de busca e IAs.",
+        faq_1q: "Quem é Claudio Bezerra?",
+        faq_1a: "Claudio Bezerra é um desenvolvedor fullstack brasileiro com mais de 6 anos de experiência em React, Node.js, TypeScript, Express e PostgreSQL.",
+        faq_2q: "Quais serviços você oferece?",
+        faq_2a: "Aplicações web fullstack, APIs REST com Express, automações e ferramentas internas, UI kits em React e evolução de sistemas em produção — sempre com testes e documentação.",
+        faq_3q: "Onde você atende?",
+        faq_3a: "Base no Brasil, com atendimento remoto para clientes em qualquer lugar do mundo. O portfólio está disponível em português (PT-BR) e inglês (EN-US).",
+        faq_4q: "Como contratar ou pedir um orçamento?",
+        faq_4a: "Pelo GitHub (github.com/ClaudioBzrr) ou pela seção de contato. Descreva o desafio — sistema novo, automação ou MVP — e você recebe proposta clara com prazo realista. Resposta típica em até 24h.",
+        faq_5q: "Qual é a sua stack principal?",
+        faq_5a: "React, TypeScript, Node.js, Express, PostgreSQL com Prisma ORM, JavaScript, Docker e Git/GitHub: do pixel da interface à query do banco.",
+        faq_6q: "Qual é o seu diferencial?",
+        faq_6a: "Código limpo e tipado com foco em retorno sobre o investimento: menos tarefas repetitivas, menos erros humanos, mais performance — e evolução contínua do produto.",
+        foot_updated: "Atualizado em",
         hero_badge: "Disponível para novos projetos",
         hero_title_1: "Eu transformo ideias em",
         hero_title_2: "software rápido e confiável.",
@@ -570,11 +807,34 @@
         contact_portfolio: "Portfólio", contact_portfolio_d: "Este site — feito com carinho",
         contact_reply: "Resposta rápida", contact_reply_d: "Costumo responder em até 24h",
         foot_made: "Feito com foco em performance e simplicidade.", foot_top: "Voltar ao topo ↑",
-        doc_title: "Claudio Bezerra — Desenvolvedor Fullstack"
+        doc_title: "Claudio Bezerra — Desenvolvedor Fullstack React, Node e TypeScript",
+        meta_desc: "Claudio Bezerra, desenvolvedor fullstack com 6+ anos de experiência. Crio apps React, APIs Node.js/Express e automações com TypeScript e PostgreSQL. Veja projetos e peça um orçamento."
       },
       "en-US": {
+        skip: "Skip to content",
         brand_sub: "Fullstack Developer",
-        nav_about: "About", nav_stack: "Stack", nav_projects: "Projects", nav_path: "Journey", nav_contact: "Contact",
+        nav_about: "About", nav_stack: "Stack", nav_projects: "Projects", nav_path: "Journey", nav_faq: "FAQ", nav_contact: "Contact",
+        ai_title: "30-second summary:",
+        ai_1: "<strong>Who:</strong> Claudio Bezerra, fullstack developer based in Brazil, coding since 2020.",
+        ai_2: "<strong>Stack:</strong> React, TypeScript, Node.js, Express, PostgreSQL with Prisma ORM, Docker and Git.",
+        ai_3: "<strong>Delivery:</strong> web apps, REST APIs and automations with tests, docs and ROI focus.",
+        ai_4: "<strong>Where:</strong> based in Brazil, working remotely worldwide, replies within 24h.",
+        faq_kicker: "FAQ",
+        faq_title: "Frequently asked questions",
+        faq_sub: "Straight answers about services, stack, timelines and hiring — written for humans and quotable by search engines and AIs.",
+        faq_1q: "Who is Claudio Bezerra?",
+        faq_1a: "Claudio Bezerra is a Brazilian fullstack developer with 6+ years of experience in React, Node.js, TypeScript, Express and PostgreSQL.",
+        faq_2q: "What services do you offer?",
+        faq_2a: "Fullstack web apps, REST APIs with Express, internal automations and tooling, React UI kits, and evolving production systems — always with tests and docs.",
+        faq_3q: "Where do you work?",
+        faq_3a: "Based in Brazil, working remotely with clients anywhere in the world. The portfolio is available in Portuguese (PT-BR) and English (EN-US).",
+        faq_4q: "How do I hire you or request a quote?",
+        faq_4a: "Via GitHub (github.com/ClaudioBzrr) or the contact section. Describe the challenge — new system, automation or MVP — and you get a clear proposal with a realistic timeline. Typical reply within 24h.",
+        faq_5q: "What is your main stack?",
+        faq_5a: "React, TypeScript, Node.js, Express, PostgreSQL with Prisma ORM, JavaScript, Docker and Git/GitHub: from UI pixels to database queries.",
+        faq_6q: "What makes you different?",
+        faq_6a: "Clean, typed code focused on ROI: fewer repetitive tasks, fewer human errors, more performance — plus continuous product evolution.",
+        foot_updated: "Updated on",
         hero_badge: "Available for new projects",
         hero_title_1: "I turn ideas into",
         hero_title_2: "fast, reliable software.",
@@ -625,17 +885,31 @@
         contact_portfolio: "Portfolio", contact_portfolio_d: "This site — crafted with care",
         contact_reply: "Fast reply", contact_reply_d: "I usually reply within 24h",
         foot_made: "Built with a focus on performance and simplicity.", foot_top: "Back to top ↑",
-        doc_title: "Claudio Bezerra — Fullstack Developer"
+        doc_title: "Claudio Bezerra — Fullstack Developer (React, Node, TypeScript)",
+        meta_desc: "Claudio Bezerra, fullstack developer with 6+ years of experience. I build React apps, Node.js/Express APIs and automations with TypeScript and PostgreSQL. See projects and get a quote."
       }
     };
 
     const btnPt = document.getElementById("btn-pt");
     const btnEn = document.getElementById("btn-en");
 
-    function setLang(lang) {
+    function setMeta(name, content, attr) {
+      const sel = attr === "property" ? 'meta[property="' + name + '"]' : 'meta[name="' + name + '"]';
+      const el = document.querySelector(sel);
+      if (el && content) el.setAttribute("content", content);
+    }
+
+    function setLang(lang, persist) {
       const dict = I18N[lang] || I18N["pt-BR"];
-      document.documentElement.lang = lang;
+      document.documentElement.lang = lang === "en-US" ? "en-US" : "pt-BR";
       document.title = dict.doc_title;
+      // SEO bilíngue: metas acompanham o idioma ativo
+      setMeta("description", dict.meta_desc);
+      setMeta("og:title", dict.doc_title, "property");
+      setMeta("og:description", dict.meta_desc, "property");
+      setMeta("og:locale", lang === "en-US" ? "en_US" : "pt_BR", "property");
+      setMeta("twitter:title", dict.doc_title);
+      setMeta("twitter:description", dict.meta_desc);
       document.querySelectorAll("[data-i18n]").forEach((el) => {
         const key = el.getAttribute("data-i18n");
         if (dict[key] !== undefined) {
@@ -646,14 +920,23 @@
       });
       btnPt.classList.toggle("active", lang === "pt-BR");
       btnEn.classList.toggle("active", lang === "en-US");
-      try { localStorage.setItem("portfolio-lang", lang); } catch (e) {}
+      if (persist !== false) { try { localStorage.setItem("portfolio-lang", lang); } catch (e) {} }
+      try {
+        const url = new URL(window.location.href);
+        if (lang === "en-US") url.searchParams.set("lang", "en");
+        else url.searchParams.delete("lang");
+        window.history.replaceState(null, "", url);
+      } catch (e) {}
     }
 
     btnPt.addEventListener("click", () => setLang("pt-BR"));
     btnEn.addEventListener("click", () => setLang("en-US"));
 
-    // Init language: saved preference, else browser language
+    // Init language: ?lang=en > saved preference > browser language
     (function initLang() {
+      let qs = null;
+      try { qs = new URLSearchParams(window.location.search).get("lang"); } catch (e) {}
+      if (qs === "en" || qs === "en-US") return setLang("en-US", false);
       let saved = null;
       try { saved = localStorage.getItem("portfolio-lang"); } catch (e) {}
       if (saved === "pt-BR" || saved === "en-US") return setLang(saved);

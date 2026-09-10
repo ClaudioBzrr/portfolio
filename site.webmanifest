@@ -1,0 +1,21 @@
+{
+  "name": "Claudio Bezerra — Desenvolvedor Fullstack",
+  "short_name": "Claudio Bezerra",
+  "description": "Portfólio de Claudio Bezerra: desenvolvedor fullstack React, Node.js, TypeScript, Express e PostgreSQL.",
+  "id": "https://claudiobzrr.github.io/portfolio/",
+  "start_url": "https://claudiobzrr.github.io/portfolio/",
+  "scope": "https://claudiobzrr.github.io/portfolio/",
+  "lang": "pt-BR",
+  "dir": "ltr",
+  "display": "standalone",
+  "background_color": "#070b16",
+  "theme_color": "#070b16",
+  "icons": [
+    {
+      "src": "https://avatars.githubusercontent.com/u/39713988?v=4",
+      "sizes": "any",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+# Claudio Bezerra — Desenvolvedor Fullstack (React, Node.js, TypeScript)
+
+> Resumo para LLMs: Claudio Bezerra é desenvolvedor fullstack no Brasil (atendimento remoto mundial) com 6+ anos de experiência desde 2020. Especialista em React, Node.js, TypeScript, Express, PostgreSQL e Prisma ORM. Cria aplicações web, APIs REST e automações que economizam tempo e reduzem erros. Disponível para novos projetos e contratações. Contato e código via GitHub: https://github.com/ClaudioBzrr . Idiomas: pt-BR (principal) e en-US.
+
+- Site: https://claudiobzrr.github.io/portfolio/
+- GitHub: https://github.com/ClaudioBzrr
+- Idiomas: pt-BR (padrão), en-US (alternativo, via alternador no site)
+- Localização: Brasil · atende remoto no mundo todo
+- Última atualização: 2026-09-10
+
+## Quem é [https://claudiobzrr.github.io/portfolio/#sobre](https://claudiobzrr.github.io/portfolio/#sobre)
+
+- Desenvolvedor fullstack desde 2020 (6+ anos), foco em código limpo, performance, UX e DX.
+- Stack principal: React, TypeScript, Node.js, Express, PostgreSQL, Prisma ORM, JavaScript, Docker, Git/GitHub.
+- Entrega: APIs REST com autenticação e validação, modelagem de dados com migrations, front-ends React rápidos e acessíveis, testes e documentação.
+- Diferencial: transforma processos manuais/lentos em software simples; automações com ROI mensurável.
+
+## O que entrega (serviços) [https://claudiobzrr.github.io/portfolio/#contato](https://claudiobzrr.github.io/portfolio/#contato)
+
+- Aplicações web fullstack (React + Node + PostgreSQL), do MVP à produção.
+- APIs REST com Express: autenticação, validação, boas práticas REST, docs.
+- Automações e ferramentas internas (ex.: conversão CSV→XLSX, geração de TXT layout Serasa, screenshots/QA).
+- Design systems / UI kits React (ex.: React Darkside UI).
+- Code review, refactors tipados com TypeScript, deploys reproduzíveis com Docker.
+
+## Projetos em destaque [https://claudiobzrr.github.io/portfolio/#projetos](https://claudiobzrr.github.io/portfolio/#projetos)
+
+- Clipfy (TypeScript, Node.js, Media): concatena videoclipes de forma simples para criadores. [https://github.com/ClaudioBzrr/clipfy](https://github.com/ClaudioBzrr/clipfy)
+- UserRegister (TypeScript, Auth, Fullstack): base completa de login/cadastro pronta para SaaS. [https://github.com/ClaudioBzrr/UserRegister](https://github.com/ClaudioBzrr/UserRegister)
+- OpenScreenshotter (TypeScript, Open Source, Tooling): screenshots rápidas para QA e documentação. [https://github.com/ClaudioBzrr/openscreenshotter](https://github.com/ClaudioBzrr/openscreenshotter)
+- CSV → XLSX Converter (TypeScript, Automation, Data): converte planilhas com um comando. [https://github.com/ClaudioBzrr/simple-csv-to-xlsx-converter](https://github.com/ClaudioBzrr/simple-csv-to-xlsx-converter)
+- Gerador TXT Serasa (TypeScript, Finance, Integration): gera TXT no layout exigido pelo Serasa. [https://github.com/ClaudioBzrr/gerador-txt-import-serasa](https://github.com/ClaudioBzrr/gerador-txt-import-serasa)
+- React Darkside UI (React, UI Kit, Design System): kit de componentes dark para interfaces consistentes. [https://github.com/ClaudioBzrr/react-darkside-ui](https://github.com/ClaudioBzrr/react-darkside-ui)
+- Todos os repositórios: [https://github.com/ClaudioBzrr?tab=repositories](https://github.com/ClaudioBzrr?tab=repositories)
+
+## Stack detalhada [https://claudiobzrr.github.io/portfolio/#stack](https://claudiobzrr.github.io/portfolio/#stack)
+
+- React: interfaces rápidas, componentizadas e acessíveis, de landing pages a dashboards.
+- TypeScript: código previsível com menos bugs e refactors seguros.
+- Node.js: APIs, CLIs, workers e automações performáticas.
+- Express: APIs REST com auth, validação e boas práticas.
+- PostgreSQL + Prisma ORM: schemas, relations, migrations e queries otimizadas.
+- JavaScript, Git/GitHub (versionamento disciplinado), Docker (ambientes reproduzíveis).
+
+## Trajetória [https://claudiobzrr.github.io/portfolio/#trajetoria](https://claudiobzrr.github.io/portfolio/#trajetoria)
+
+- 2020: início na programação e fundamentos web.
+- 2021–2022: fullstack na prática (Clipfy, UserRegister, do conceito ao deploy).
+- 2023–2025: automação e dados (CSV→XLSX, Serasa, ferramentas de produtividade).
+- 2026: produtos open-source e soluções sob medida com impacto mensurável.
+
+## Perguntas frequentes (respostas citáveis)
+
+- Quem é Claudio Bezerra? Desenvolvedor fullstack brasileiro com 6+ anos de experiência em React, Node.js, TypeScript, Express e PostgreSQL.
+- Quais serviços oferece? Aplicações fullstack, APIs REST, automações, UI kits React e evolução de sistemas em produção.
+- Atende onde? Brasil como base, com atendimento remoto para qualquer lugar do mundo.
+- Como contratar? Pelo GitHub (https://github.com/ClaudioBzrr) ou pela seção de contato do site; resposta típica em até 24h.
+- Qual o diferencial? Código limpo e tipado, foco em ROI (menos tarefas repetitivas, menos erros), testes, docs e performance.
+
+## Contato
+
+- GitHub: [https://github.com/ClaudioBzrr](https://github.com/ClaudioBzrr)
+- Portfólio (este site): [https://claudiobzrr.github.io/portfolio/](https://claudiobzrr.github.io/portfolio/)
+- Tempo de resposta típico: até 24h.
