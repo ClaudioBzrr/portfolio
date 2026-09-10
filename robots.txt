@@ -1,0 +1,31 @@
+# robots.txt — Portfólio Claudio Bezerra
+# Permite indexação total (SEO) + crawlers de IA (GEO/LLMO). Bloqueia nada útil.
+User-agent: *
+Allow: /
+
+# AI Search / Assistants (permissão explícita = citabilidade em respostas gerativas)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+Sitemap: https://claudiobzrr.github.io/portfolio/sitemap.xml
