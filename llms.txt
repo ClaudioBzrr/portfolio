@@ -20,7 +20,7 @@
 - Aplicações web fullstack (React + Node + PostgreSQL), do MVP à produção.
 - APIs REST com Express: autenticação, validação, boas práticas REST, docs.
 - Automações e ferramentas internas (ex.: conversão CSV→XLSX, geração de TXT layout Serasa, screenshots/QA).
-- Design systems / UI kits React (ex.: React Darkside UI).
+- Design systems / UI kits React para interfaces consistentes.
 - Code review, refactors tipados com TypeScript, deploys reproduzíveis com Docker.
 
 ## Projetos em destaque [https://claudiobzrr.github.io/portfolio/#projetos](https://claudiobzrr.github.io/portfolio/#projetos)
@@ -30,7 +30,7 @@
 - OpenScreenshotter (TypeScript, Open Source, Tooling): screenshots rápidas para QA e documentação. [https://github.com/ClaudioBzrr/openscreenshotter](https://github.com/ClaudioBzrr/openscreenshotter)
 - CSV → XLSX Converter (TypeScript, Automation, Data): converte planilhas com um comando. [https://github.com/ClaudioBzrr/simple-csv-to-xlsx-converter](https://github.com/ClaudioBzrr/simple-csv-to-xlsx-converter)
 - Gerador TXT Serasa (TypeScript, Finance, Integration): gera TXT no layout exigido pelo Serasa. [https://github.com/ClaudioBzrr/gerador-txt-import-serasa](https://github.com/ClaudioBzrr/gerador-txt-import-serasa)
-- React Darkside UI (React, UI Kit, Design System): kit de componentes dark para interfaces consistentes. [https://github.com/ClaudioBzrr/react-darkside-ui](https://github.com/ClaudioBzrr/react-darkside-ui)
+- Open Run (Java, Android, Local-first): app local-first para registrar caminhadas e corridas, sem conta nem nuvem. [https://github.com/ClaudioBzrr/open-run](https://github.com/ClaudioBzrr/open-run)
 - Todos os repositórios: [https://github.com/ClaudioBzrr?tab=repositories](https://github.com/ClaudioBzrr?tab=repositories)
 
 ## Stack detalhada [https://claudiobzrr.github.io/portfolio/#stack](https://claudiobzrr.github.io/portfolio/#stack)
